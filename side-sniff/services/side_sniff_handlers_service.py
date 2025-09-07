@@ -6,9 +6,17 @@ from scapy.all import TCP, IP, Raw
 from configuration.side_sniffer_configuration import MODBUS_PORT
 
 
+from scapy.all import TCP, IP, Raw
+from configuration.side_sniffer_configuration import MODBUS_PORT
+from parser.modbus_parser import parse_modbus_payload  # helper separato
+
+
 def modbus_packet_handler(packet):
     """
-    Callback per ogni pacchetto Modbus TCP catturato
+    Callback per ogni pacchetto Modbus TCP
+    - Gestisce richieste e risposte
+    - Gestisce eccezioni
+    - Ignora multi-frame
     """
     if packet.haslayer(TCP) and packet.haslayer(IP):
         tcp_layer = packet[TCP]
@@ -18,8 +26,29 @@ def modbus_packet_handler(packet):
             info = (
                 f"{ip_layer.src}:{tcp_layer.sport} -> {ip_layer.dst}:{tcp_layer.dport}"
             )
+
             if packet.haslayer(Raw):
                 payload = packet[Raw].load
-                print(f"[MODBUS] {info} | Payload (hex): {payload.hex()}")
+                parsed = parse_modbus_payload(payload)
+
+                if parsed:
+                    if parsed["exception"]:
+                        print(
+                            f"[MODBUS-EXC] {info} | "
+                            f"TID={parsed['transaction_id']} | "
+                            f"UID={parsed['unit_id']} | "
+                            f"FC=0x{parsed['function_code']:02X} | "
+                            f"Exception={parsed['exception_code']} ({parsed['exception_message']})"
+                        )
+                    else:
+                        print(
+                            f"[MODBUS] {info} | "
+                            f"TID={parsed['transaction_id']} | "
+                            f"UID={parsed['unit_id']} | "
+                            f"FC={parsed['function_code']} ({parsed['function_name']}) | "
+                            f"Data={parsed['data'].hex()}"
+                        )
+                else:
+                    print(f"[MODBUS] {info} | Payload troppo corto ({len(payload)}B)")
             else:
                 print(f"[MODBUS] {info} | Nessun payload")

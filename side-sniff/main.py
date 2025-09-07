@@ -2,7 +2,7 @@
 Entry point dello sniffer
 """
 
-from services.side_sniff_device_service import select_interface
+from services.side_sniff_interface_service import select_interface
 from core.side_sniffer_core import run_sniffer_in_thread
 
 if __name__ == "__main__":
