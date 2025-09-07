@@ -1,0 +1,7 @@
+[
+    {
+        "layer": "TCP",
+        "port": 502,
+        "protocol": "modbus"
+    }
+]

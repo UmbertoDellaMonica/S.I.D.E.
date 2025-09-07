@@ -4,11 +4,8 @@ Gestione dei pacchetti catturati
 
 from scapy.all import TCP, IP, Raw
 from configuration.side_sniffer_configuration import MODBUS_PORT
-
-
-from scapy.all import TCP, IP, Raw
-from configuration.side_sniffer_configuration import MODBUS_PORT
 from parser.modbus_parser import parse_modbus_payload  # helper separato
+from scapy.all import TCP, UDP
 
 
 def modbus_packet_handler(packet):

@@ -4,19 +4,15 @@ Funzioni per avviare lo sniffing in thread separato
 
 import threading
 from scapy.all import sniff
-from services.side_sniff_handlers_service import modbus_packet_handler
-from configuration.side_sniffer_configuration import MODBUS_PORT
+from core.side_sniffer_dispatcher import dispatch_packet
 
 
 def start_sniffer(interface, stop_event):
-    """
-    Avvia lo sniffing dei pacchetti Modbus TCP sulla porta 502
-    """
     sniff(
         iface=interface,
-        prn=modbus_packet_handler,
+        prn=dispatch_packet,
         store=False,
-        filter=f"tcp port {MODBUS_PORT}",
+        filter="",
         stop_filter=lambda x: stop_event.is_set(),
     )
 
