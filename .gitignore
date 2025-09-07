@@ -1,3 +1,11 @@
+# Env Variables
 *.env
+############## Python .ignore ##############
 
+# Environment 
 side-env
+
+# Other files 
+*.pyc
+# Pycache folder
+__pycache__
