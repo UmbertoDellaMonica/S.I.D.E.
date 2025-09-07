@@ -3,5 +3,39 @@
         "layer": "TCP",
         "port": 502,
         "protocol": "modbus"
+    },
+    {
+        "layer": "UDP",
+        "port": 502,
+        "protocol": "modbus"
+    },
+    {
+        "layer": "TCP",
+        "port": 502,
+        "protocol": "modbus",
+        "conditions": {
+            "has_raw": true
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 502,
+        "protocol": "modbus",
+        "conditions": {
+            "function_code_range": [1, 127]
+        }
+    },
+    {
+        "layer": "UDP",
+        "port": 502,
+        "protocol": "modbus",
+        "conditions": {
+            "unit_id_range": [1, 247]
+        }
     }
+    
+
+
+
+
 ]

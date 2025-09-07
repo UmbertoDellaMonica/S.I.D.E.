@@ -10,19 +10,24 @@ from pymodbus.datastore import (
 from configuration_server import NREG
 
 
-def create_modbus_store(nreg=NREG):
+def create_modbus_store(nreg=NREG, units=[1, 2]):
     """
-    Crea il contesto Modbus con registri simulati.
+    Crea il contesto Modbus con registri simulati per più unit_id.
     DI = Discrete Inputs
     CO = Coils
     HR = Holding Registers
     IR = Input Registers
     """
-    store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, [15] * nreg),
-        co=ModbusSequentialDataBlock(0, [16] * nreg),
-        hr=ModbusSequentialDataBlock(0, [17] * nreg),
-        ir=ModbusSequentialDataBlock(0, [18] * nreg),
-    )
-    context = ModbusServerContext(slaves=store, single=True)
+    context_dict = {}
+    for unit_id in units:
+        store = ModbusSlaveContext(
+            di=ModbusSequentialDataBlock(0, [15] * nreg),
+            co=ModbusSequentialDataBlock(0, [16] * nreg),
+            hr=ModbusSequentialDataBlock(0, [17] * nreg),
+            ir=ModbusSequentialDataBlock(0, [18] * nreg),
+        )
+        context_dict[unit_id] = store
+
+    # single=False permette di distinguere i vari unit_id
+    context = ModbusServerContext(slaves=context_dict, single=False)
     return context

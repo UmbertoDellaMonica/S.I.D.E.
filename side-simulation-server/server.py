@@ -2,13 +2,14 @@
 Entry point per avviare il server Modbus TCP
 """
 
-import logging
-from pymodbus.server import StartTcpServer
+import logging, asyncio
+from pymodbus.server import StartAsyncTcpServer
 from pymodbus.transaction import ModbusSocketFramer
 
 from configuration_server import HOST, PORT
 from store_server import create_modbus_store
 from identity_server import create_identity
+from client_management import client_connected_cb
 
 # --- Logging generale ---
 logging.basicConfig()
@@ -17,7 +18,7 @@ log.setLevel(logging.DEBUG)  # DEBUG mostra tutte le richieste
 
 
 # --- Avvio server ---
-def run_modbus_server():
+async def run_modbus_server():
     context = create_modbus_store()
     identity = create_identity()
 
@@ -26,13 +27,14 @@ def run_modbus_server():
 
     # StartTcpServer non permette hook diretto per callback request,
     # quindi il logging dettagliato avviene tramite livello DEBUG
-    StartTcpServer(
+    await StartAsyncTcpServer(
         context=context,
         identity=identity,
         address=(HOST, PORT),
         framer=ModbusSocketFramer,
+        handle=client_connected_cb,
     )
 
 
 if __name__ == "__main__":
-    run_modbus_server()
+    asyncio.run(run_modbus_server())
