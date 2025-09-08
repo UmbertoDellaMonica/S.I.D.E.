@@ -5,7 +5,7 @@ from scapy.all import TCP, UDP
 
 # Mappa protocollo -> handler
 PROTOCOL_HANDLERS = {
-    Protocol.MODBUS: modbus_packet_handler,
+    Protocol.MODBUS.value: modbus_packet_handler,
     # puoi aggiungere altri handler: "http": http_handler, "bacnet": bacnet_handler
 }
 

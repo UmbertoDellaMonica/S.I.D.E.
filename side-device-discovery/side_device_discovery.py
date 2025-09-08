@@ -1,50 +1,65 @@
 #!/usr/bin/env python
-import pika, json, sys, os, logging
+import pika, json, logging, sys
 from typing import Callable
+from configuration.database_configuration import init_driver, close_driver_database
+from services.database_service import register_modbus_event
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
 )
 
 # Registry globale degli handler
-EVENT_HANDLERS: dict[str, Callable[[dict], None]] = {}
+# Ora ogni handler riceverà anche il driver come secondo argomento
+EVENT_HANDLERS: dict[str, Callable[[dict, object], None]] = {}
 
 
 def register_handler(routing_key: str):
     """Decorator per registrare un handler di eventi."""
 
-    def decorator(func: Callable[[dict], None]):
+    def decorator(func: Callable[[dict, object], None]):
         EVENT_HANDLERS[routing_key] = func
         return func
 
     return decorator
 
 
+# --- HANDLER ---
 @register_handler("new_device")
-def handle_new_device(event: dict):
+def handle_new_device(event: dict, driver):
     logging.info(f"[Handler] Nuovo device scoperto: {event}")
-    # update_device_map(event)  # esempio di chiamata a Neo4j
+    try:
+        register_modbus_event(event, driver)  # upsert su Neo4j
+    except Exception as e:
+        logging.error(f"Errore registrando il device: {e}")
 
 
 @register_handler("device_update")
-def handle_device_update(event: dict):
+def handle_device_update(event: dict, driver):
     logging.info(f"[Handler] Aggiornamento device: {event}")
-    # update_device_map(event)
+    try:
+        register_modbus_event(event, driver)
+    except Exception as e:
+        logging.error(f"Errore aggiornando il device: {e}")
 
 
-def callback(ch, method, properties, body):
+# --- CALLBACK ---
+def callback(ch, method, properties, body, driver):
     routing_key = method.routing_key
     event = json.loads(body)
     logging.info(f"[x] Evento ricevuto con routing_key '{routing_key}': {event}")
 
     handler = EVENT_HANDLERS.get(routing_key)
     if handler:
-        handler(event)
+        handler(event, driver)
     else:
         logging.warning(f"Nessun handler registrato per '{routing_key}'")
 
 
+# --- MAIN ---
 def main():
+    # Inizializza Neo4j driver
+    driver = init_driver()
+
     connection = pika.BlockingConnection(pika.ConnectionParameters(host="localhost"))
     channel = connection.channel()
 
@@ -59,16 +74,28 @@ def main():
         channel.queue_bind(exchange=exchange_name, queue=queue_name, routing_key=rk)
 
     logging.info("[*] Waiting for discovery events. To exit press CTRL+C")
-    channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+
+    # wrapper per passare il driver agli handler
+    on_message = lambda ch, method, properties, body: callback(
+        ch, method, properties, body, driver
+    )
+    channel.basic_consume(
+        queue=queue_name, on_message_callback=on_message, auto_ack=True
+    )
 
     try:
         channel.start_consuming()
     except KeyboardInterrupt:
-        logging.info("\n[!] Interruzione richiesta dall'utente. Fermando il broker ...")
+        logging.info(
+            "\n[!] Interruzione richiesta dall'utente. Fermando il consumer ..."
+        )
+    finally:
+        close_driver_database()  # chiudi il driver Neo4j
         try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
+            connection.close()
+        except Exception:
+            pass
+        sys.exit(0)
 
 
 if __name__ == "__main__":
