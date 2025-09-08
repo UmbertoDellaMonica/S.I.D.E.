@@ -1,10 +1,11 @@
 from services.side_sniff_handlers_service import modbus_packet_handler
 from core.side_sniffer_protocol_tree import protocol_tree
+from configuration.side_sniffer_configuration import Protocol
 from scapy.all import TCP, UDP
 
 # Mappa protocollo -> handler
 PROTOCOL_HANDLERS = {
-    "modbus": modbus_packet_handler,
+    Protocol.MODBUS: modbus_packet_handler,
     # puoi aggiungere altri handler: "http": http_handler, "bacnet": bacnet_handler
 }
 
