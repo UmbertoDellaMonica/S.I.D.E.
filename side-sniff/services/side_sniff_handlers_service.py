@@ -5,7 +5,7 @@ Gestione dei pacchetti catturati
 from scapy.all import TCP, IP, Raw
 from configuration.side_sniffer_configuration import MODBUS_PORT
 from parser.modbus_parser import parse_modbus_payload  # helper separato
-from scapy.all import TCP, UDP
+from discovery.side_sniffer_discovery import publish_discovery_event
 
 
 def modbus_packet_handler(packet):
@@ -29,6 +29,30 @@ def modbus_packet_handler(packet):
                 parsed = parse_modbus_payload(payload)
 
                 if parsed:
+
+                    data_bytes = parsed.get("data")
+
+                    event = {
+                        "protocol": "Modbus",
+                        "src_ip": ip_layer.src,
+                        "dst_ip": ip_layer.dst,
+                        "src_port": tcp_layer.sport,
+                        "dst_port": tcp_layer.dport,
+                        "transaction_id": parsed["transaction_id"],
+                        "unit_id": parsed["unit_id"],
+                        "function_code": parsed["function_code"],
+                        "function_name": parsed.get("function_name"),
+                        "exception": parsed.get("exception"),
+                        "data": (
+                            data_bytes.hex()
+                            if isinstance(data_bytes, (bytes, bytearray))
+                            else None
+                        ),
+                    }
+
+                    # Publish event on RabbitMQ
+                    publish_discovery_event(event)
+
                     if parsed["exception"]:
                         print(
                             f"[MODBUS-EXC] {info} | "

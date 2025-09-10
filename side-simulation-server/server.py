@@ -9,7 +9,6 @@ from pymodbus.transaction import ModbusSocketFramer
 from configuration_server import HOST, PORT
 from store_server import create_modbus_store
 from identity_server import create_identity
-from client_management import client_connected_cb
 
 # --- Logging generale ---
 logging.basicConfig()
@@ -32,7 +31,6 @@ async def run_modbus_server():
         identity=identity,
         address=(HOST, PORT),
         framer=ModbusSocketFramer,
-        handle=client_connected_cb,
     )
 
 
