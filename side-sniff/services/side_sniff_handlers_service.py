@@ -4,7 +4,7 @@ Gestione dei pacchetti catturati
 
 from scapy.all import TCP, IP, Raw
 from configuration.side_sniffer_configuration import MODBUS_PORT
-from parser.modbus_parser import parse_modbus_payload  # helper separato
+from decoder.modbus_decoder import parse_modbus_payload  # helper separato
 from discovery.side_sniffer_discovery import publish_discovery_event
 
 

@@ -2,11 +2,17 @@
 import pika, json, logging, sys
 from typing import Callable
 from configuration.database_configuration import init_driver, close_driver_database
+from configuration.device_discovery_publisher import DeviceDiscoveryPublisher
 from services.database_service import register_modbus_event
+
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
 )
+
+
+publisher = DeviceDiscoveryPublisher(host="localhost", exchange="frontend.events")
+
 
 # Registry globale degli handler
 # Ora ogni handler riceverà anche il driver come secondo argomento
@@ -23,12 +29,13 @@ def register_handler(routing_key: str):
     return decorator
 
 
-# --- HANDLER ---
 @register_handler("new_device")
 def handle_new_device(event: dict, driver):
     logging.info(f"[Handler] Nuovo device scoperto: {event}")
     try:
         register_modbus_event(event, driver)  # upsert su Neo4j
+        # pubblica evento al backend
+        publisher.publish({"type": "new_device", "event": event})
     except Exception as e:
         logging.error(f"Errore registrando il device: {e}")
 
@@ -38,6 +45,8 @@ def handle_device_update(event: dict, driver):
     logging.info(f"[Handler] Aggiornamento device: {event}")
     try:
         register_modbus_event(event, driver)
+        # pubblica evento al backend
+        publisher.publish({"type": "device_update", "event": event})
     except Exception as e:
         logging.error(f"Errore aggiornando il device: {e}")
 
@@ -90,7 +99,11 @@ def main():
             "\n[!] Interruzione richiesta dall'utente. Fermando il consumer ..."
         )
     finally:
-        close_driver_database()  # chiudi il driver Neo4j
+        close_driver_database()
+        try:
+            publisher.close()
+        except Exception:
+            pass
         try:
             connection.close()
         except Exception:

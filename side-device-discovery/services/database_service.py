@@ -19,19 +19,12 @@ def register_modbus_event(event: dict, driver):
 
 
 def _upsert_event(tx, event: dict):
-    """
-    Inserisce o aggiorna i nodi dei device e la relazione bidirezionale tra di loro.
-    Imposta ruolo, protocollo e display_name per la visualizzazione.
-    """
     now = datetime.utcnow().isoformat()
 
-    # Determina il ruolo dei nodi
     src_role = "client" if event["src_port"] != 502 else "slave"
     dst_role = "client" if event["dst_port"] != 502 else "slave"
-
     protocol = event.get("protocol", "Modbus")
 
-    # Crea display_name
     src_display = f"{src_role}:{event['src_port']}:{event['src_ip']}"
     dst_display = f"{dst_role}:{event['dst_port']}:{event['dst_ip']}"
 
@@ -47,13 +40,13 @@ def _upsert_event(tx, event: dict):
 
         // Relazione c -> s
         MERGE (c)-[r1:{RELATION_COMMUNICATES_WITH} {{protocol:$protocol}}]->(s)
-          ON CREATE SET r1.first_seen = $now
-          ON MATCH  SET r1.last_seen = $now
+          ON CREATE SET r1.first_seen = $now, r1.count = 1
+          ON MATCH  SET r1.last_seen = $now, r1.count = r1.count + 1
 
         // Relazione s -> c (bidirezionale)
         MERGE (s)-[r2:{RELATION_COMMUNICATES_WITH} {{protocol:$protocol}}]->(c)
-          ON CREATE SET r2.first_seen = $now
-          ON MATCH  SET r2.last_seen = $now
+          ON CREATE SET r2.first_seen = $now, r2.count = 1
+          ON MATCH  SET r2.last_seen = $now, r2.count = r2.count + 1
         """,
         src_ip=event["src_ip"],
         src_port=event["src_port"],

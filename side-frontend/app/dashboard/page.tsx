@@ -1,4 +1,4 @@
-import GraphContainer from "../components/GraphContainer";
+import GraphContainer from "./components/GraphContainer";
 
 export default function DashboardOverview() {
   return (
