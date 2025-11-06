@@ -80,10 +80,7 @@ export function SidebarLayout({
             <OpenMenuIcon />
           </NavbarItem>
         </div>
-        <div className="min-w-0 flex-1">
-          {navbar}
-          <ModeToggle /> {/* Toggle a destra della navbar */}
-        </div>
+        <div className="min-w-0 flex-1">{navbar}</div>
       </header>
 
       {/* Content */}

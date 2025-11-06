@@ -1,6 +1,6 @@
 import { SidebarLayout } from "@/shared/sidebar-layout";
 import type { Metadata } from "next";
-import { SideBarScada } from "../components/SideBarScadaComponent";
+import { SideBarScada } from "./components/SideBarScadaComponent";
 
 export const metadata: Metadata = {
   title: "S.I.D.E.",

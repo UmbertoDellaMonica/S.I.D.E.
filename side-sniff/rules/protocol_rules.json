@@ -32,10 +32,97 @@
         "conditions": {
             "unit_id_range": [1, 247]
         }
+    },
+    {
+        "layer": "TCP",
+        "port": 102,
+        "protocol": "S7"
+    },
+    {
+        "layer": "TCP",
+        "port": 102,
+        "protocol": "S7",
+        "conditions": {
+            "has_raw": true
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 102,
+        "protocol": "S7",
+        "conditions": {
+            "job_function_range": [4, 46]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 102,
+        "protocol": "S7",
+        "conditions": {
+            "db_number_range": [0, 65535]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 102,
+        "protocol": "S7",
+        "conditions": {
+            "read_write_type": ["read", "write"]
+        }
+    },
+
+
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA"
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "has_raw": true
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "message_type_in": ["MSG", "OPN", "CLO", "HEL", "ACK"]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "chunk_type_in": ["F", "A"]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "secure_channel_id_range": [1, 1000]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "sequence_number_range": [1, 100000]
+        }
+    },
+    {
+        "layer": "TCP",
+        "port": 4840,
+        "protocol": "OPC-UA",
+        "conditions": {
+            "request_id_range": [1, 100000]
+        }
     }
-    
-
-
-
-
 ]

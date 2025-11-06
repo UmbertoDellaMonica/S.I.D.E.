@@ -1,0 +1,77 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Struttura del documento}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Related Work}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}S.I.D.E. - Architecture}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Architettura Generale}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}side-sniff}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Obiettivi funzionali}{7}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Panoramica dello Sniffer}{8}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Procedura operativa (step-by-step)}{8}{subsection.3.2.3}%
+\contentsline {paragraph}{Handler Modbus/TCP}{11}{Item.8}%
+\contentsline {paragraph}{Handler S7 (Siemens S7Comm)}{11}{figure.caption.4}%
+\contentsline {paragraph}{Handler OPC-UA}{12}{figure.caption.5}%
+\contentsline {paragraph}{Sintesi operativa}{12}{figure.caption.6}%
+\contentsline {subsection}{\numberline {3.2.4}Decodifica dei Payload Applicativi}{13}{subsection.3.2.4}%
+\contentsline {paragraph}{Parsing Modbus/TCP}{13}{subsection.3.2.4}%
+\contentsline {paragraph}{Parsing Siemens S7 (S7Comm)}{14}{lstnumber.3.2.6}%
+\contentsline {paragraph}{Parsing OPC-UA}{14}{Item.11}%
+\contentsline {paragraph}{Architettura comune dei decoder}{14}{Item.11}%
+\contentsline {subsection}{\numberline {3.2.5}Modulo di Anomaly Detection: Z-Score Service}{15}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Flusso di Comunicazione: side-sniff e side-device-discovery}{17}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}side-device-discovery}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Funzionamento generale}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Struttura del codice}{18}{subsection.3.3.2}%
+\contentsline {paragraph}{1. \texttt {side-device-discovery.py}}{18}{subsection.3.3.2}%
+\contentsline {paragraph}{2. \texttt {services/database\_service.py}}{19}{subsection.3.3.2}%
+\contentsline {paragraph}{3. \texttt {configuration/device\_discovery\_publisher.py}}{19}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Flusso operativo}{19}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Proprietà principali}{19}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}side-api-backend}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Struttura generale}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Punto di avvio: \texttt {run.py}}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Gestione del database Neo4j}{21}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Gestione degli eventi asincroni: \texttt {service\_discovery\_consumer.py}}{21}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Gestione connessioni WebSocket: \texttt {websocket\_manager.py}}{22}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Controller REST e WebSocket}{22}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Integrazione dei servizi e funzionamento complessivo}{22}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Sintesi del flusso operativo}{23}{subsection.3.4.8}%
+\contentsline {subsection}{\numberline {3.4.9}Ruolo architetturale}{23}{subsection.3.4.9}%
+\contentsline {subsection}{\numberline {3.4.10}Flusso di Interazione con il Backend}{23}{subsection.3.4.10}%
+\contentsline {section}{\numberline {3.5}side-frontend}{23}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Dashboard interattiva}{24}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Sezione \texttt {/devices}}{24}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Sezione \texttt {/events}}{25}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Avvio del modulo}{26}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}side-ml-models}{27}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Estrazione dei dati dai file PCAP}{27}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Addestramento del modello Isolation Forest}{28}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Osservazioni}{28}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Device Simulators}{29}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Modbus TCP}{29}{subsection.3.7.1}%
+\contentsline {subsubsection}{Server Modbus TCP}{29}{subsection.3.7.1}%
+\contentsline {subsubsection}{Client Modbus TCP}{29}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Siemens S7 (Snap7)}{30}{subsection.3.7.2}%
+\contentsline {subsubsection}{Server S7}{30}{subsection.3.7.2}%
+\contentsline {subsubsection}{Client S7}{30}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}OPC-UA}{30}{subsection.3.7.3}%
+\contentsline {subsubsection}{Server OPC-UA}{30}{subsection.3.7.3}%
+\contentsline {paragraph}{Configurazione}{30}{subsection.3.7.3}%
+\contentsline {paragraph}{Variabili simulate}{31}{subsection.3.7.3}%
+\contentsline {paragraph}{Metodi server}{31}{subsection.3.7.3}%
+\contentsline {subsubsection}{Client OPC-UA}{31}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Conclusioni sui simulatori}{31}{subsection.3.7.4}%
+\contentsline {chapter}{\numberline {4}SCADA -- Cyber Attacks}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduzione}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Metodo di riproduzione del traffico}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Obiettivi sperimentali}{32}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Tipologie d'attacco considerate}{33}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Man--In--The--Middle (MITM)}{33}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}modbusQuery2Flooding}{33}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}modbusQueryFlooding}{33}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}pingFloodDDoS (ICMP)}{33}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}tcpSYNFloodDDoS}{33}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Organizzazione dei test e note pratiche}{34}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusioni}{35}{chapter.5}%
+\contentsline {paragraph}{Sviluppi futuri}{35}{chapter.5}%

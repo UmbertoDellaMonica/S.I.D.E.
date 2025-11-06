@@ -1,0 +1,66 @@
+\chapter{SCADA -- Cyber Attacks}
+\label{ch:scada_attacks}
+
+\section{Introduzione}
+In questo capitolo descriviamo gli scenari d'attacco riprodotti nel testbed, utilizzando come riferimento un dataset Modbus/TCP (baseline).  
+Le sperimentazioni sono eseguite esclusivamente in un ambiente di laboratorio isolato e con autorizzazione esplicita; i risultati sono confrontati con studi e dataset pubblici nel dominio SCADA/ICS \cite{scadaAttacks,DatasetModbus}.
+
+\section{Metodo di riproduzione del traffico}
+Per generare le condizioni sperimentali abbiamo adottato due modalità principali:
+\begin{enumerate}
+  \item \textbf{Replay offline:} riproduzione dei pcap originali tramite strumenti come \texttt{tcpreplay} (utile per valutare l'impatto temporale a livello di rete).
+  \item \textbf{Rigenerazione programmata:} creazione/alterazione di flussi Modbus con script (ad es. \texttt{Scapy}) per ottenere varianti manipolate, testare payload modificati o pattern temporali specifici.
+\end{enumerate}
+Con queste modalità abbiamo costruito due condizioni sperimentali:
+\begin{description}
+  \item[Baseline] traffico originale tratto dal dataset.
+  \item[Manipolato] traffico derivato dal baseline e opportunamente alterato per simulare gli attacchi descritti di seguito.
+\end{description}
+
+\section{Obiettivi sperimentali}
+Gli esperimenti mirano a:
+\begin{itemize}
+  \item valutare l'impatto funzionale sugli asset ICS (errori Modbus, eccezioni, variazione di valori dei registri);
+  \item misurare l'efficacia di rilevamento del sistema \texttt{side-sniff} (NSM/IDS) nel riconoscere anomalie o attacchi;
+  \item fornire materiale riproducibile per analisi comparate in laboratorio controllato.
+\end{itemize}
+
+\section{Tipologie d'attacco considerate}
+Di seguito vengono descritte in modo sintetico e tecnico le tipologie d'attacco simulate nel testbed.
+
+\subsection{Man--In--The--Middle (MITM)}
+Un nodo intermedio intercetta e potenzialmente modifica richieste e risposte Modbus/TCP tra master e slave.  
+Obiettivi tipici:
+\begin{itemize}
+  \item lettura non autorizzata dei payload Modbus;
+  \item injettare risposte false (modifica dei register values);
+  \item introdurre latenza o delay per studiare l'effetto sulla logica applicativa.
+\end{itemize}
+Nel nostro setup la manipolazione è effettuata offline sui pcap o durante la rigenerazione tramite script per evitare operazioni su sistemi reali.
+
+\subsection{modbusQuery2Flooding}
+Variante mirata a inviare coppie di query Modbus ripetute in rapida successione verso lo stesso o più slave.  
+Scopo: saturare risorse locali (buffer, CPU, thread) e provocare degrado o malfunzionamenti del servizio Modbus.
+
+\subsection{modbusQueryFlooding}
+Flooding generico di query Modbus (letture o scritture) ad alta frequenza; può includere più function code per rendere il pattern meno prevedibile e più difficile da bloccare con semplici rate‑limit.
+
+\subsection{pingFloodDDoS (ICMP)}
+Attacco ICMP Echo Request in elevato volume verso l'infrastruttura target. Effetti tipici:
+\begin{itemize}
+  \item degrado della raggiungibilità della rete di controllo;
+  \item aumento dei tempi di risposta ed eventuale perdita di pacchetti.
+\end{itemize}
+
+\subsection{tcpSYNFloodDDoS}
+Generazione massiva di pacchetti TCP SYN senza completare la handshake, con l'obiettivo di esaurire il backlog di connessioni del target e impedire nuove connessioni legittime (ad esempio verso il servizio Modbus/TCP sulla porta 502).
+
+\section{Organizzazione dei test e note pratiche}
+\begin{itemize}
+  \item Per ogni attacco si definisce una serie di parametri controllati (tasso di invio, durata, target IP/porta, payload modificati) e si esegue almeno una prova di baseline per confronto.
+  \item Tutti i pcap e gli script usati per la rigenerazione/alterazione sono conservati e hashati (SHA256) per garantire riproducibilità e tracciabilità.
+  \item Le misure raccolte includono: latenza request--response, errori/exception Modbus, eventuali cambi di stato nei dispositivi simulati e log/alert prodotti da \texttt{side-sniff}.
+\end{itemize}
+
+% Citazioni utilizzate nel capitolo
+\nocite{scadaAttacks,DatasetModbus}
