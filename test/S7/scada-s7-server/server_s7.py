@@ -1,0 +1,3 @@
+"""
+python -m snap7.server --port 102
+"""

@@ -10,7 +10,9 @@ from pymodbus.datastore import (
 from configuration_server import NREG
 
 
-def create_modbus_store(nreg=NREG, units=[1, 2]):
+def create_modbus_store(
+    nreg=NREG, units=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15]
+):
     """
     Crea il contesto Modbus con registri simulati per più unit_id.
     DI = Discrete Inputs

@@ -1,0 +1,982 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{simulationImplementationSecurityServices}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=4105148b8091e56a60a87535f35d2841}{%
+           family={Musa},
+           familyi={M\bibinitperiod},
+           given={Shahrulniza},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1aaa7b44a92ff15a98d45da61107a889}{%
+           family={Shahzad},
+           familyi={S\bibinitperiod},
+           given={AAmir},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5bcfc0d766ee6e94fbe373c34ddddb79}{%
+           family={Aborujilah},
+           familyi={A\bibinitperiod},
+           given={Abdulaziz},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Kota Kinabalu, Malaysia}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{0d147efbce668eacc96ee8850489688c}
+      \strng{fullhash}{0d147efbce668eacc96ee8850489688c}
+      \strng{fullhashraw}{0d147efbce668eacc96ee8850489688c}
+      \strng{bibnamehash}{0d147efbce668eacc96ee8850489688c}
+      \strng{authorbibnamehash}{0d147efbce668eacc96ee8850489688c}
+      \strng{authornamehash}{0d147efbce668eacc96ee8850489688c}
+      \strng{authorfullhash}{0d147efbce668eacc96ee8850489688c}
+      \strng{authorfullhashraw}{0d147efbce668eacc96ee8850489688c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{SCADA (Supervisory Control and Data Acquisition) is a real time systems that are deployed over real time infrastructure such as water pumping stations, oil purification plants and rail control centers etc. These systems were connected with local area network or limited networks but now with the latest technology and facilities in real time infrastructure these systems are also moving from local area network to the internet. Using internet communication, these systems are attacked by several attacks therefore these systems need protection from different kinds of attacks/threads to secure communication between devices that are communicating with SCADA environment. The current research takes the Hybrid-based Cryptography solution using "Symmetric AES and Asymmetric RSA algorithms" to secure the SCADA communication by implementing security services such as authentication, confidentiality, and Non- Repudiation. Simulation environment is used to verify propose a solution is implemented properly between Master Terminal Unit (MTU) and Remote Terminal Unit (RTUs) during the transmission of payload (data) in a wireless network.}
+      \field{booktitle}{Proceedings of the 7th International Conference on Ubiquitous Information Management and Communication}
+      \field{isbn}{9781450319584}
+      \field{series}{ICUIMC '13}
+      \field{title}{Simulation base implementation for placement of security services in real time environment}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1145/2448556.2448587
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2448556.2448587
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2448556.2448587
+      \endverb
+      \keyw{wireless network,simulation base experimentation,security services,security issues,cryptography algorithms,cryptography,SCADA (supervisory control and data acquisition)}
+    \endentry
+    \entry{ruleBasedScadaNetwork}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=865de0ad624b442a018417bf6b85083e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=af8419325b43463790ef61065e7b7ba5}{%
+           family={McLaughlin},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=2e1069289c56cb3972efa6a0d9119add}{%
+           family={Littler},
+           familyi={L\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3de361c3b18153525e2d046a3c347b46}{%
+           family={Sezer},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9c1a39267a00ae1cd82208aeac21ea86}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={H.F.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{958aa08ccff585684f3852063103799b}
+      \strng{fullhash}{dc9699da57c9e5202b60c7d898053734}
+      \strng{fullhashraw}{dc9699da57c9e5202b60c7d898053734}
+      \strng{bibnamehash}{958aa08ccff585684f3852063103799b}
+      \strng{authorbibnamehash}{958aa08ccff585684f3852063103799b}
+      \strng{authornamehash}{958aa08ccff585684f3852063103799b}
+      \strng{authorfullhash}{dc9699da57c9e5202b60c7d898053734}
+      \strng{authorfullhashraw}{dc9699da57c9e5202b60c7d898053734}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2nd IET Renewable Power Generation Conference (RPG 2013)}
+      \field{title}{Rule-based intrusion detection system for SCADA networks}
+      \field{year}{2013}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1049/cp.2013.1729
+      \endverb
+      \keyw{SCADA;Cyber-Security;Intrusion Detection;IEC 60870-5-104}
+    \endentry
+    \entry{semanticSecurityAnalysisScadaNetwork}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=7c8b2289031d27d57fc9c7e7239ec517}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=af325dee70d660d62cc6fefe913b2d43}{%
+           family={Slagell},
+           familyi={S\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ace2c01658c4ecfb7478645248947f2c}{%
+           family={Kalbarczyk},
+           familyi={K\bibinitperiod},
+           given={Zbigniew},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=28a547a7eeae170feb735f3e26ae7763}{%
+           family={Iyer},
+           familyi={I\bibinitperiod},
+           given={Ravishankar\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Glasgow, Scotland, UK}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{44b39ba8b66d5f3e570d6b5d3da5dbe9}
+      \strng{fullhash}{43edaa82ec5e000b90370756379d3034}
+      \strng{fullhashraw}{43edaa82ec5e000b90370756379d3034}
+      \strng{bibnamehash}{44b39ba8b66d5f3e570d6b5d3da5dbe9}
+      \strng{authorbibnamehash}{44b39ba8b66d5f3e570d6b5d3da5dbe9}
+      \strng{authornamehash}{44b39ba8b66d5f3e570d6b5d3da5dbe9}
+      \strng{authorfullhash}{43edaa82ec5e000b90370756379d3034}
+      \strng{authorfullhashraw}{43edaa82ec5e000b90370756379d3034}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this poster, we present a semantic analysis framework based on a collaborative network of intrusion detection systems (IDSes) that we proposed in [3] to detect control-related attacks in power systems. The framework combines system knowledge of both cyber and physical infrastructure in power grids to help the IDS to estimate execution consequences of control commands. We demonstrate the implementation based on Bro IDS [11] and the experimental results on the performance overhead of the semantic analysis framework.}
+      \field{booktitle}{Proceedings of the 7th International Conference on Security of Information and Networks}
+      \field{isbn}{9781450330336}
+      \field{series}{SIN '14}
+      \field{title}{Semantic Security Analysis of SCADA Networks to Detect Malicious Control Commands in Power Grids (Poster)}
+      \field{year}{2014}
+      \field{pages}{492\bibrangedash 495}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1145/2659651.2659746
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2659651.2659746
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2659651.2659746
+      \endverb
+      \keyw{semantic analysis,intrusion detection system,SCADA}
+    \endentry
+    \entry{architectingCyberSecSmartGrid}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=921e73d63070fb3b4400152e0c6ac234}{%
+           family={Majed},
+           familyi={M\bibinitperiod},
+           given={Shahir},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cb9d7e03cc0b86cf28863fc0ce708fef}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Suhaimi},
+           giveni={S\bibinitperiod}}}%
+        {{hash=522ac086f824408d16833ad930e5fa42}{%
+           family={Shaaban},
+           familyi={S\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hanoi, Viet Nam}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{fullhash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{fullhashraw}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{bibnamehash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{authorbibnamehash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{authornamehash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{authorfullhash}{fa9abf8ea05abeefd722adab4084a7e0}
+      \strng{authorfullhashraw}{fa9abf8ea05abeefd722adab4084a7e0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper documents the design and implementation of the platform while proposing cyber attack scenarios which will gave high impact towards grid operations. In addition, we documents the results of an initial cyber vulnerability assessment to evaluate the security posture assessment of the current design.}
+      \field{booktitle}{Proceedings of the 16th International Conference on Information Integration and Web-Based Applications \& Services}
+      \field{isbn}{9781450330015}
+      \field{series}{iiWAS '14}
+      \field{title}{Architecting and Development of the SecureCyber: A SCADA Security platform Over Energy Smart Grid}
+      \field{year}{2014}
+      \field{pages}{170\bibrangedash 174}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1145/2684200.2684308
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2684200.2684308
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2684200.2684308
+      \endverb
+      \keyw{Critical Infrastructure Protection,Security Metrics,Smart Grid Security,Vulnerability Assessment}
+    \endentry
+    \entry{tripleLayerScadaSecurityOfElectricUtility}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=744f8ee897bc07aadd1fad41dcab1982}{%
+           family={Samdarshi},
+           familyi={S\bibinitperiod},
+           given={Rishabh},
+           giveni={R\bibinitperiod}}}%
+        {{hash=117244feee1c6c8f59be5373fcd759d5}{%
+           family={Sinha},
+           familyi={S\bibinitperiod},
+           given={Nidul},
+           giveni={N\bibinitperiod}}}%
+        {{hash=74e9eaab9082865ac53d351baeff86b3}{%
+           family={Tripathi},
+           familyi={T\bibinitperiod},
+           given={Paritosh},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{fullhash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{fullhashraw}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{bibnamehash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{authorbibnamehash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{authornamehash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{authorfullhash}{97db06376928f4a4d41c8aeef3ecacb1}
+      \strng{authorfullhashraw}{97db06376928f4a4d41c8aeef3ecacb1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 Annual IEEE India Conference (INDICON)}
+      \field{title}{A triple layer intrusion detection system for SCADA security of electric utility}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/INDICON.2015.7443439
+      \endverb
+      \keyw{SCADA systems;Internet;Intrusion detection;Sensors;Machine learning algorithms;Instruments;SCADA;SCADA Security;Intrusion Detection}
+    \endentry
+    \entry{graphBasedActiveCyberDefense}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=7fb37c147c27b39dcc4b68c84f0a592f}{%
+           family={Lakhdhar},
+           familyi={L\bibinitperiod},
+           given={Yosra},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c246a475f4ba2fee9b4c192b2e06338c}{%
+           family={Rekhis},
+           familyi={R\bibinitperiod},
+           given={Slim},
+           giveni={S\bibinitperiod}}}%
+        {{hash=12a71164044d4df72250465a061a47c7}{%
+           family={Boudriga},
+           familyi={B\bibinitperiod},
+           given={Noureddine},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore, Singapore}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{fullhash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{fullhashraw}{574e143fb526981010a73ca2b2869ae9}
+      \strng{bibnamehash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{authorbibnamehash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{authornamehash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{authorfullhash}{574e143fb526981010a73ca2b2869ae9}
+      \strng{authorfullhashraw}{574e143fb526981010a73ca2b2869ae9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Securing cyber system is a major concern as security attacks become more and more sophisticated. We develop in this paper a novel graph-based Active Cyber Defense (ACD) model to proactively respond to cyber attacks. The proposed model is based on the use of a semantically rich graph to describe cyber systems, types of used interconnection between them, and security related data useful to develop active defense strategies. The developed model takes into consideration the probabilistic nature of cyber attacks, and their degree of complexity. In this context, analytics are provided to proactively test the impact of vulnerabilities/threats increase on the system, analyze the consequent behavior of cyber systems and security solution, and decide about the security state of the whole cyber system. Our model integrates in the same framework decisions made by cyber defenders based on their expertise and knowledge, and decisions that are automatically generated using security analytic rules.}
+      \field{booktitle}{Proceedings of the 14th International Conference on Advances in Mobile Computing and Multi Media}
+      \field{isbn}{9781450348065}
+      \field{series}{MoMM '16}
+      \field{title}{An Approach To A Graph-Based Active Cyber Defense Model}
+      \field{year}{2016}
+      \field{pages}{261\bibrangedash 268}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1145/3007120.3007142
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3007120.3007142
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3007120.3007142
+      \endverb
+    \endentry
+    \entry{idsScadaFrameworkIncorporateProcessSemantics}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=9e6fa16bdacf987b74354f18179dccf0}{%
+           family={Nivethan},
+           familyi={N\bibinitperiod},
+           given={Jeyasingam},
+           giveni={J\bibinitperiod}}}%
+        {{hash=88b90810bb093da0031f22fc55ee87a6}{%
+           family={Papa},
+           familyi={P\bibinitperiod},
+           given={Mauricio},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oak Ridge, TN, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{9c62ad57235d50a707439b43758d3869}
+      \strng{fullhash}{9c62ad57235d50a707439b43758d3869}
+      \strng{fullhashraw}{9c62ad57235d50a707439b43758d3869}
+      \strng{bibnamehash}{9c62ad57235d50a707439b43758d3869}
+      \strng{authorbibnamehash}{9c62ad57235d50a707439b43758d3869}
+      \strng{authornamehash}{9c62ad57235d50a707439b43758d3869}
+      \strng{authorfullhash}{9c62ad57235d50a707439b43758d3869}
+      \strng{authorfullhashraw}{9c62ad57235d50a707439b43758d3869}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{SCADA security is an increasingly important research area as these systems, used for process control and automation, are being exposed to the Internet due to their use of TCP/IP protocols as a transport mechanism for control messages. Most of the existing research work on SCADA systems has focused on addressing SCADA security by monitoring attacks or anomalies at the network level. The main issue affecting these systems today is that by focusing our attention on network-level monitoring needs, security practitioners may remain unaware of process level constraints. The proposed framework helps ensure that a mechanism is in place to help map process level constraints, as described by process engineers, to network level monitoring needs. Existing solutions have tried to address this problem but have not been able to fully bridge the gap between the process and the network. The goal of this research is to provide a solution that (i) leverages the knowledge process engineers have about the system (to help strengthen cyber security) and that has the ability to (ii) seamlessly monitors process constraints at the network level using standard network security tools. A prototype system for the Modbus TCP protocol and the Bro IDS has been built to validate the approach.}
+      \field{booktitle}{Proceedings of the 11th Annual Cyber and Information Security Research Conference}
+      \field{isbn}{9781450337526}
+      \field{series}{CISRC '16}
+      \field{title}{A SCADA Intrusion Detection Framework that Incorporates Process Semantics}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1145/2897795.2897814
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/2897795.2897814
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/2897795.2897814
+      \endverb
+      \keyw{SCADA security,intrusion detection,network security,process monitoring}
+    \endentry
+    \entry{suricataEnhancingIdsCyberSecurity}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=c6c1f0034aba3e690be7766c3ccbe806}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d4bdbd45548ebac010a44a9328f546c4}{%
+           family={Dillabaugh},
+           familyi={D\bibinitperiod},
+           given={Craig},
+           giveni={C\bibinitperiod}}}%
+        {{hash=31596cc0b4d1facd242d5d8ccb1bfe84}{%
+           family={Seddigh},
+           familyi={S\bibinitperiod},
+           given={Nabil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c19c2313c8cfc741f6055ddafb775cdc}{%
+           family={Nandy},
+           familyi={N\bibinitperiod},
+           given={Biswajit},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{24120f60840b79d969559a5c294014cc}
+      \strng{fullhash}{7059244881e14f683b5006f24e35c7f9}
+      \strng{fullhashraw}{7059244881e14f683b5006f24e35c7f9}
+      \strng{bibnamehash}{24120f60840b79d969559a5c294014cc}
+      \strng{authorbibnamehash}{24120f60840b79d969559a5c294014cc}
+      \strng{authornamehash}{24120f60840b79d969559a5c294014cc}
+      \strng{authorfullhash}{7059244881e14f683b5006f24e35c7f9}
+      \strng{authorfullhashraw}{7059244881e14f683b5006f24e35c7f9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE)}
+      \field{title}{Enhancing Suricata intrusion detection system for cyber security in SCADA networks}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/CCECE.2017.7946818
+      \endverb
+      \keyw{Protocols;Integrated circuits;Encapsulation;Intrusion detection;Tools;Computer security;SCADA;Industrial Control;Cyber Security;Intrusion Detection Systems;IDS;Suricata;EtherNet/IP Protocol}
+    \endentry
+    \entry{alasiri202034}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a481cce1cda2ae3b4ae127de76f5be8d}{%
+           family={Al-Asiri},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Majed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=12eb459a36b6153b84c9b209161b91aa}{%
+           family={El-Alfy},
+           familyi={E\bibinithyphendelim A\bibinitperiod},
+           given={El-Sayed\bibnamedelima M.},
+           giveni={E\bibinithyphendelim S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{fullhash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{fullhashraw}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{bibnamehash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{authorbibnamehash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{authornamehash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{authorfullhash}{7a39ec0d581e44dee6a21fe710037c96}
+      \strng{authorfullhashraw}{7a39ec0d581e44dee6a21fe710037c96}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Intrusion detection in SCADA systems has received increased attention from researchers as connectivity to public networks became a necessity in many industries. The nature and characteristics of SCADA systems call for special considerations and techniques of intrusion detection. Many works have been made in this field, ranging from generic intrusion detection techniques to customized solutions designed specifically for SCADA systems. In the recent years, some works have focused on using physical metrics in addition to the popular network-based and host-based intrusion detection approaches. This paper presents a taxonomy that considers the special features of cyberphysical intrusion detection systems (IDSs) with examples from the literature. Moreover, a case study is presented for a simulated gas pipeline dataset to compare the effectiveness of decision tree classifiers for various categories of features in SCADA systems. The results show that an IDS that uses a combination of physical and network metrics significantly outperforms an IDS that only uses network metrics or physical metrics.}
+      \field{issn}{1877-0509}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{note}{The 11th International Conference on Ambient Systems, Networks and Technologies (ANT) / The 3rd International Conference on Emerging Data and Industry 4.0 (EDI40) / Affiliated Workshops}
+      \field{title}{On Using Physical Based Intrusion Detection in SCADA Systems}
+      \field{volume}{170}
+      \field{year}{2020}
+      \field{pages}{34\bibrangedash 42}
+      \range{pages}{9}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.procs.2020.03.007
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1877050920304294
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1877050920304294
+      \endverb
+      \keyw{Information Security,SCADA,Industrial Control Systems,Cyber Physical Systems (CPS),Industrial Internet of Things (IIoT),Intrusion Detection,Taxonomy}
+    \endentry
+    \entry{diderotIds}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=07df517af05c275bdd538358fe658f7b}{%
+           family={Radoglou-Grammatikis},
+           familyi={R\bibinithyphendelim G\bibinitperiod},
+           given={Panagiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9db39d9f5d8cde8e16f2ace5befcddea}{%
+           family={Sarigiannidis},
+           familyi={S\bibinitperiod},
+           given={Panagiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=03f4212c0e2b8febb8d222b29ca0aa9d}{%
+           family={Efstathopoulos},
+           familyi={E\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=95e58009b12ae727d80a3abaf5352bb9}{%
+           family={Karypidis},
+           familyi={K\bibinitperiod},
+           given={Paris-Alexandros},
+           giveni={P\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=31ba5b5e067159a4dc94b54224bfd435}{%
+           family={Sarigiannidis},
+           familyi={S\bibinitperiod},
+           given={Antonios},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Virtual Event, Ireland}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{9ab577fa670da55a77c4f0f04ef9f09b}
+      \strng{fullhash}{354e9d62d644bf1c1fb147b03230acc0}
+      \strng{fullhashraw}{354e9d62d644bf1c1fb147b03230acc0}
+      \strng{bibnamehash}{9ab577fa670da55a77c4f0f04ef9f09b}
+      \strng{authorbibnamehash}{9ab577fa670da55a77c4f0f04ef9f09b}
+      \strng{authornamehash}{9ab577fa670da55a77c4f0f04ef9f09b}
+      \strng{authorfullhash}{354e9d62d644bf1c1fb147b03230acc0}
+      \strng{authorfullhashraw}{354e9d62d644bf1c1fb147b03230acc0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, an Intrusion Detection and Prevention System (IDPS) for the Distributed Network Protocol 3 (DNP3) Supervisory Control and Data Acquisition (SCADA) systems is presented. The proposed IDPS is called DIDEROT (Dnp3 Intrusion DetEction pReventiOn sysTem) and relies on both supervised Machine Learning (ML) and unsupervised/outlier ML detection models capable of discriminating whether a DNP3 network flow is related to a particular DNP3 cyberattack or anomaly. First, the supervised ML detection model is applied, trying to identify whether a DNP3 network flow is related to a specific DNP3 cyberattack. If the corresponding network flow is detected as normal, then the unsupervised/outlier ML anomaly detection model is activated, seeking to recognise the presence of a possible anomaly. Based on the DIDEROT detection results, the Software Defined Networking (SDN) technology is adopted in order to mitigate timely the corresponding DNP3 cyberattacks and anomalies. The performance of DIDEROT is demonstrated using real data originating from a substation environment.}
+      \field{booktitle}{Proceedings of the 15th International Conference on Availability, Reliability and Security}
+      \field{isbn}{9781450388337}
+      \field{series}{ARES '20}
+      \field{title}{DIDEROT: an intrusion detection and prevention system for DNP3-based SCADA systems}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1145/3407023.3409314
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3407023.3409314
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3407023.3409314
+      \endverb
+      \keyw{smart grid,machine learning,intrusion detection,autonencoder,anomaly detection,SDN,SCADA}
+    \endentry
+    \entry{supervisedLearningIdsScada}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=c6d848d1c96e045d42f23157de4e131f}{%
+           family={Suaboot},
+           familyi={S\bibinitperiod},
+           given={Jakapan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=541ed51b899a6643ab9a27b279468a2e}{%
+           family={Fahad},
+           familyi={F\bibinitperiod},
+           given={Adil},
+           giveni={A\bibinitperiod}}}%
+        {{hash=93b729da8f44b1e0e9192ab368db96d3}{%
+           family={Tari},
+           familyi={T\bibinitperiod},
+           given={Zahir},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0e8d3c2397e6ae67ffff6fc7eac28615}{%
+           family={Grundy},
+           familyi={G\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=79c3752772e9248f7d4a4e9e419300b8}{%
+           family={Mahmood},
+           familyi={M\bibinitperiod},
+           given={Abdun\bibnamedelima Naser},
+           giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=7f27f31f0904aa2d8f9d00017ceb5ca7}{%
+           family={Almalawi},
+           familyi={A\bibinitperiod},
+           given={Abdulmohsen},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d913b7de1daa87c8658ba2dcad408248}{%
+           family={Zomaya},
+           familyi={Z\bibinitperiod},
+           given={Albert\bibnamedelima Y.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=b00a6993d47f771cf0b9cbdbec40eb02}{%
+           family={Drira},
+           familyi={D\bibinitperiod},
+           given={Khalil},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{448861a95a2696ab03405970df3ef8c9}
+      \strng{fullhash}{fdb0be36d3878ddfb4c901184186befe}
+      \strng{fullhashraw}{fdb0be36d3878ddfb4c901184186befe}
+      \strng{bibnamehash}{448861a95a2696ab03405970df3ef8c9}
+      \strng{authorbibnamehash}{448861a95a2696ab03405970df3ef8c9}
+      \strng{authornamehash}{448861a95a2696ab03405970df3ef8c9}
+      \strng{authorfullhash}{fdb0be36d3878ddfb4c901184186befe}
+      \strng{authorfullhashraw}{fdb0be36d3878ddfb4c901184186befe}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Supervisory Control and Data Acquisition (SCADA) systems play an important role in monitoring industrial processes such as electric power distribution, transport systems, water distribution, and wastewater collection systems. Such systems require a particular attention with regards to security aspects, as they deal with critical infrastructures that are crucial to organizations and countries. Protecting SCADA systems from intrusion is a very challenging task because they do not only inherit traditional IT security threats but they also include additional vulnerabilities related to field components (e.g., cyber-physical attacks). Many of the existing intrusion detection techniques rely on supervised learning that consists of algorithms that are first trained with reference inputs to learn specific information, and then tested on unseen inputs for classification purposes. This article surveys supervised learning from a specific security angle, namely SCADA-based intrusion detection. Based on a systematic review process, existing literature is categorized and evaluated according to SCADA-specific requirements. Additionally, this survey reports on well-known SCADA datasets and testbeds used with machine learning methods. Finally, we present key challenges and our recommendations for using specific supervised methods for SCADA systems.}
+      \field{issn}{0360-0300}
+      \field{journaltitle}{ACM Comput. Surv.}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{A Taxonomy of Supervised Learning for IDSs in SCADA Environments}
+      \field{volume}{53}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1145/3379499
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3379499
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3379499
+      \endverb
+      \keyw{SCADA security,machine learning,network intrusion,supervised learning}
+    \endentry
+    \entry{cyberSecurityAgricoltureMachineLearning}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=7dbd9685449b6f3ab794aa0705d9e743}{%
+           family={Ferrag},
+           familyi={F\bibinitperiod},
+           given={Mohamed\bibnamedelima Amine},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4c0680f90ff1fc49345832d1f5ca90a8}{%
+           family={Shu},
+           familyi={S\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=38aae0fa9427141e44d20052b7e74081}{%
+           family={Friha},
+           familyi={F\bibinitperiod},
+           given={Othmane},
+           giveni={O\bibinitperiod}}}%
+        {{hash=0a4343e721877775d6caea153680110e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Xing},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{2269d84c1e9ed86aa06afcc75f81bf87}
+      \strng{fullhash}{90f1d5632ffeaf571336cdaa0fb09b13}
+      \strng{fullhashraw}{90f1d5632ffeaf571336cdaa0fb09b13}
+      \strng{bibnamehash}{2269d84c1e9ed86aa06afcc75f81bf87}
+      \strng{authorbibnamehash}{2269d84c1e9ed86aa06afcc75f81bf87}
+      \strng{authornamehash}{2269d84c1e9ed86aa06afcc75f81bf87}
+      \strng{authorfullhash}{90f1d5632ffeaf571336cdaa0fb09b13}
+      \strng{authorfullhashraw}{90f1d5632ffeaf571336cdaa0fb09b13}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE/CAA Journal of Automatica Sinica}
+      \field{number}{3}
+      \field{title}{Cyber Security Intrusion Detection for Agriculture 4.0: Machine Learning-Based Solutions, Datasets, and Future Directions}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{407\bibrangedash 436}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.1109/JAS.2021.1004344
+      \endverb
+      \keyw{Performance evaluation;Cloud computing;Intrusion detection;Machine learning;Agriculture;Smart grids;Internet of Things;Agriculture 4.0;cyber security;intrusion detection system;machine learning approaches;smart agriculture}
+    \endentry
+    \entry{plcCybersecuirtyRisk}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=44cac11c8978967b23eab967b6c3ab50}{%
+           family={Da\bibnamedelima Silva},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=13b9ed7539f14bdc46713b1626637cfc}{%
+           family={Puys},
+           familyi={P\bibinitperiod},
+           given={Maxime},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9503cb31b41e58c9b3f8a74f2e717c11}{%
+           family={Thevenon},
+           familyi={T\bibinitperiod},
+           given={Pierre-Henri},
+           giveni={P\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=3061182209cb77c780d680c6d63504f4}{%
+           family={Mocanu},
+           familyi={M\bibinitperiod},
+           given={Stephane},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Benevento, Italy}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{3d366b034f500d097ccf111201c96798}
+      \strng{fullhash}{d637a65948c27142ffc553b86d391487}
+      \strng{fullhashraw}{d637a65948c27142ffc553b86d391487}
+      \strng{bibnamehash}{3d366b034f500d097ccf111201c96798}
+      \strng{authorbibnamehash}{3d366b034f500d097ccf111201c96798}
+      \strng{authornamehash}{3d366b034f500d097ccf111201c96798}
+      \strng{authorfullhash}{d637a65948c27142ffc553b86d391487}
+      \strng{authorfullhashraw}{d637a65948c27142ffc553b86d391487}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In recent years, Informational Technologies (IT) was massively deployed into Industrial Control Systems (ICS) mainly for its economic benefits. However, this new paradigm, converging IT and Operational Technologies (OT), brings new challenges that companies need to face. Historically, ICS had to cope with safety requirements which ensure the protection of people, environment, and assets. Now, ICS must deal with additional threats, coming from cyberattacks, in order to maintain safety. For that purpose, it becomes essential to develop new cybersecurity technologies and methodologies that allow to assess the safety of ICS against cyberattacks. In this paper, we propose a new methodology, based on Programmable Logic Controller (PLC) logic in order to identify cyberattacks that impacts the ICS safety. Our methodology transforms a PLC logic into a finite-state machine that represents the PLC behavior. Then, using this automaton, we identify which modifications in states of sensors and actuators leads to compromising the safety. Finally, we build attack scenarios from these events and the network vulnerabilities. We apply our methodology on a simple example, yet challenging to analyze by hand, and we show how we manage to scale up on a classical example from the control systems domain: the Tennessee Eastman chemical process.}
+      \field{booktitle}{Proceedings of the 18th International Conference on Availability, Reliability and Security}
+      \field{isbn}{9798400707728}
+      \field{series}{ARES '23}
+      \field{title}{PLC Logic-Based Cybersecurity Risks Identification for ICS}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.1145/3600160.3605067
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3600160.3605067
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3600160.3605067
+      \endverb
+      \keyw{Cybersecurity,ICS,IT,OT,Risk analysis,Risk assessment,SCADA,Safety,Security}
+    \endentry
+    \entry{precinct}{inproceedings}{}{}
+      \name{author}{7}{}{%
+        {{hash=77fcdecb6bae5e610165241a20c6c9ce}{%
+           family={Amadou\bibnamedelima Kountche},
+           familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Djibrilla},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c67fbb49fb076df2edd01c1575a4dc02}{%
+           family={Aubert},
+           familyi={A\bibinitperiod},
+           given={Jocelyn},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6135393db92220503aa5f27220aa6736}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Manh-Dung},
+           giveni={M\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=b0dc260ed0147976fecf58de82425706}{%
+           family={Kalfa},
+           familyi={K\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4b79118ad113239c27169053a1104fd2}{%
+           family={Durante},
+           familyi={D\bibinitperiod},
+           given={Nicola\bibnamedelima Gregorio},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=979a97dfce71c88909a715acd8b77448}{%
+           family={Passerini},
+           familyi={P\bibinitperiod},
+           given={Cristiano},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d41bb9a572de42ab028faec879fa24b0}{%
+           family={Kuding},
+           familyi={K\bibinitperiod},
+           given={Stephane},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{60479d854c02478de80ed1b414491b2a}
+      \strng{fullhash}{5d13dd3b35bef26d4cb84b24c262bf05}
+      \strng{fullhashraw}{5d13dd3b35bef26d4cb84b24c262bf05}
+      \strng{bibnamehash}{60479d854c02478de80ed1b414491b2a}
+      \strng{authorbibnamehash}{60479d854c02478de80ed1b414491b2a}
+      \strng{authornamehash}{60479d854c02478de80ed1b414491b2a}
+      \strng{authorfullhash}{5d13dd3b35bef26d4cb84b24c262bf05}
+      \strng{authorfullhashraw}{5d13dd3b35bef26d4cb84b24c262bf05}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present work was done during the PRECINCT (Preparedness and Resilience Enforcement for Critical INfrastructure Cascading Cyberphysical Threats and effects with focus on district or regional protection) project. The PRECINCT Ecosystem Platform (PEP), part of the PRECINCT approach, serves to “unify” different Critical Infrastructures (CIs) – through a cybersecurity ecosystem platform - and helps in improving facility protection against cascading effects resulting from cyber-physical attacks, in minimizing service disruptions and in managing interfaces with other CIs. In recent years, CIs have been equipped with Industrial Internet of Things (IIoT) technologies including sensors and actuators which communicate using open protocols (e.g., MQTT, AMQP, CoAP, Modbus, DNP3) or commercially licensed protocols (LoRA, IEC 6870-5-101, Profibus) to share data and commands. Furthermore, the management of these CIs is built on Information Communication Technologies (ICTs) which became Critical Information Infrastructure (CII). Therefore, this paper proposes an approach for the deployment of ICT tools used in CI Protection (CIP) projects. Indeed, the PEP’s deployment in PRECINCT’s Living Labs (LLs) was described using Topology and Orchestration Specification for Cloud Applications (TOSCA). TOSCA, in addition to the usage of reference architectures, is proposed by this paper for re-usability and transferability of CIP projects outcomes.}
+      \field{booktitle}{Proceedings of the 19th International Conference on Availability, Reliability and Security}
+      \field{isbn}{9798400717185}
+      \field{series}{ARES '24}
+      \field{title}{The PRECINCT Ecosystem Platform for Critical Infrastructure Protection: Architecture, Deployment and Transferability}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1145/3664476.3670437
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3664476.3670437
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3664476.3670437
+      \endverb
+      \keyw{Critical Infrastructure Protection,Reference Architecture,TOSCA}
+    \endentry
+    \entry{graphNeuralNetworkIdsElectrical}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa690624d1a135a86feb4fbf55204aba}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Siqi},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{fullhash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{fullhashraw}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{bibnamehash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{authorbibnamehash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{authornamehash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{authorfullhash}{aa690624d1a135a86feb4fbf55204aba}
+      \strng{authorfullhashraw}{aa690624d1a135a86feb4fbf55204aba}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In response to the difficulties in feature extraction, poor model generalization ability, and high computational complexity in traditional research on anomaly detection of electrical loads, this article investigated a detection method based on Graph Convolutional Networks (GCNs). By constructing a graph structure of power grid nodes and edges, and using GCN for feature extraction, this method achieved an accuracy of 93.4\%, a recall rate of 91.8\%, and an F1 score of 92.6\% in the experiment, which was significantly better than traditional models. In addition, this article also explored the influence of model parameters, and further verified the robustness of the method by adjusting the learning rate and network layers. The experimental results showed that the GCN-based method can not only effectively detect and locate abnormal electrical load, but also provide effective technical support for intelligent management of the power grid.}
+      \field{booktitle}{Proceedings of the 2024 9th International Conference on Cyber Security and Information Engineering}
+      \field{isbn}{9798400718137}
+      \field{series}{ICCSIE '24}
+      \field{title}{Anomaly Detection of Electrical Load in Power Systems Based on Graph Neural Networks}
+      \field{year}{2024}
+      \field{pages}{529\bibrangedash 534}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/3689236.3689283
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3689236.3689283
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3689236.3689283
+      \endverb
+      \keyw{Electrical Load Anomaly Detection,Graph Convolutional Network,Graph Neural Network,Power System}
+    \endentry
+    \entry{scadaDiversityExploration}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=43dcb599a60a5530f37ce032c390be06}{%
+           family={Ortiz},
+           familyi={O\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+        {{hash=fa707b735a519d492d2ce1276f8e1336}{%
+           family={Cardenas},
+           familyi={C\bibinitperiod},
+           given={Alvaro\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c2c7d973d3d682747c1d34e1c9fe7642}{%
+           family={Wool},
+           familyi={W\bibinitperiod},
+           given={Avishai},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{fullhash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{fullhashraw}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{bibnamehash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{authorbibnamehash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{authornamehash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{authorfullhash}{b36233e409f0dcf5374afe376e7a300f}
+      \strng{authorfullhashraw}{b36233e409f0dcf5374afe376e7a300f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Despite a growing interest in understanding the industrial control networks that monitor and control our critical infrastructures (such as the power grid), to date, SCADA networks have been analyzed in isolation from each other. They have been treated as monolithic networks without taking into consideration their differences. In this paper, we analyze real-world data from different parts of a power grid (generation, transmission, distribution, and end-consumer) and show that these industrial networks exhibit a variety of unique behaviors and configurations that have not been documented before. To the best of our knowledge, our study is the first to tackle the analysis of power grid networks at this level. Our results help us dispel several misconceptions proposed by previous work, and we also provide new insights into the differences and types of SCADA networks.}
+      \field{journaltitle}{Proc. ACM Meas. Anal. Comput. Syst.}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{SCADA World: An Exploration of the Diversity in Power Grid Networks}
+      \field{volume}{8}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1145/3639036
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3639036
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3639036
+      \endverb
+      \keyw{goose,iccp,iec 60870-5-104,ieee c37.118,modbus/tcp,scada traffic}
+    \endentry
+    \entry{identificationPayloadIndustrialDevices}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=22d7ff43d05b1ffac761beb36702e193}{%
+           family={Pospisil},
+           familyi={P\bibinitperiod},
+           given={Ondrej},
+           giveni={O\bibinitperiod}}}%
+        {{hash=afe782648307974eb55e4aa9d302833c}{%
+           family={Fujdiak},
+           familyi={F\bibinitperiod},
+           given={Radek},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{fullhash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{fullhashraw}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{bibnamehash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{authorbibnamehash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{authornamehash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{authorfullhash}{8e0a4405741e3220fdc99e96535d7120}
+      \strng{authorfullhashraw}{8e0a4405741e3220fdc99e96535d7120}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Identification of industrial devices based on their behavior in network communication is important from a cybersecurity perspective in two areas: attack prevention and digital forensics. In both areas, device identification falls under asset management or asset tracking. Due to the impact of active scanning on these networks, particularly in terms of latency, it is important to use passive scanning in industrial networks. For passive identification, statistical learning algorithms are nowadays the most appropriate. The aim of this paper is to demonstrate the potential for passive identification of PLC devices using statistical learning based on network communication, specifically the payload of the packet. Individual statistical parameters from 15 minutes of traffic based on payload entropy were used to create the features. Three scenarios were performed and the XGBoost algorithm was used for evaluation. In the best scenario, the model achieved an accuracy score of 83\% to identify individual devices.}
+      \field{booktitle}{Proceedings of the 19th International Conference on Availability, Reliability and Security}
+      \field{isbn}{9798400717185}
+      \field{series}{ARES '24}
+      \field{title}{Identification of industrial devices based on payload}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1145/3664476.3670462
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3664476.3670462
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3664476.3670462
+      \endverb
+      \keyw{ICS,Identification,ML,OT,PLC,XGBoost}
+    \endentry
+    \entry{aiScada}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=2fa751b0dc1cfc3dfdbecae571177cfc}{%
+           family={Yalçın},
+           familyi={Y\bibinitperiod},
+           given={Nesibe},
+           giveni={N\bibinitperiod}}}%
+        {{hash=05fc9d51cffd41896cb1f8c364e7caf7}{%
+           family={Çakır},
+           familyi={Ç\bibinitperiod},
+           given={Semih},
+           giveni={S\bibinitperiod}}}%
+        {{hash=781ee6ac51578edbbaf1687c73f29b28}{%
+           family={Ünaldı},
+           familyi={Ü\bibinitperiod},
+           given={Sibel},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{fullhash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{fullhashraw}{479c7a9793900d58d42b35805b6533cc}
+      \strng{bibnamehash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{authorbibnamehash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{authornamehash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{authorfullhash}{479c7a9793900d58d42b35805b6533cc}
+      \strng{authorfullhashraw}{479c7a9793900d58d42b35805b6533cc}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Internet of Things Journal}
+      \field{number}{24}
+      \field{title}{Attack Detection Using Artificial Intelligence Methods for SCADA Security}
+      \field{volume}{11}
+      \field{year}{2024}
+      \field{pages}{39550\bibrangedash 39559}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/JIOT.2024.3447876
+      \endverb
+      \keyw{SCADA systems;Cyberattack;Artificial intelligence;Security;Industrial Internet of Things;Nearest neighbor methods;Reconnaissance;Artificial intelligence (AI);attack detection;cyber security;Industrial Internet of Things (IIoT);supervisory control and data acquisition (SCADA)}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

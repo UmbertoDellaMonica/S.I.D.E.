@@ -34,12 +34,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
-          <QueryProvider>
-            {children}
-            <ToastContainer position="top-center" theme="colored" />
-          </QueryProvider>
-        </ThemeProvider>
+        <QueryProvider>
+          {children}
+          <ToastContainer position="top-center" theme="colored" />
+        </QueryProvider>
       </body>
     </html>
   );

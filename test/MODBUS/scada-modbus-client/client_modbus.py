@@ -2,8 +2,10 @@ import time
 import random
 import os
 import sys
+from datetime import datetime
 from dotenv import load_dotenv
 from pymodbus.client import ModbusTcpClient
+from pymodbus.exceptions import ModbusException
 
 # --- Caricamento variabili ambiente ---
 load_dotenv()
@@ -23,34 +25,100 @@ print(f"[CLIENT] Avvio client Modbus con UNIT_ID = {UNIT_ID}")
 # --- Creazione client Modbus TCP ---
 client = ModbusTcpClient(SERVER_IP, port=SERVER_PORT)
 
+# --- Configurazioni simulazione ---
+WRITE_COIL_PROB = 0.4
+READ_COIL_PROB = 0.3
+READ_REG_PROB = 0.3
+ERROR_PROB = 0.02
+DELAY_PROB = 0.05
+DELAY_RANGE = (3, 6)
+SLEEP_RANGE = (1.5, 3.5)
+MAX_COIL = 10
+MAX_REGISTER = 20
+
 try:
     while True:
-        # --- Scrittura coil casuale ---
-        coil_address = random.randint(1, 5)
-        coil_value = random.choice([True, False])
-        client.write_coil(coil_address, coil_value, unit=UNIT_ID)
-        print(f"[CLIENT-{UNIT_ID}] Scrittura coil {coil_address} = {coil_value}")
+        # --- Simulazione ritardo casuale ---
+        if random.random() < DELAY_PROB:
+            delay = random.uniform(*DELAY_RANGE)
+            print(
+                f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Simulazione ritardo rete: {delay:.2f}s"
+            )
+            time.sleep(delay)
 
-        # --- Lettura dello stesso coil ---
-        result = client.read_coils(coil_address, 1, unit=UNIT_ID)
-        if result.isError():
-            print(f"[CLIENT-{UNIT_ID}] Errore nella lettura coil {coil_address}")
-        else:
-            print(f"[CLIENT-{UNIT_ID}] Lettura coil {coil_address} = {result.bits[0]}")
+        # --- Selezione azione ---
+        action = random.choices(
+            ["write_coil", "read_coil", "read_register"],
+            weights=[WRITE_COIL_PROB, READ_COIL_PROB, READ_REG_PROB],
+            k=1,
+        )[0]
 
-        # --- Lettura di un holding register casuale ---
-        hr_address = random.randint(0, 10)
-        result = client.read_holding_registers(hr_address, 1, unit=UNIT_ID)
-        if result.isError():
-            print(f"[CLIENT-{UNIT_ID}] Errore nella lettura HR {hr_address}")
-        else:
-            print(f"[CLIENT-{UNIT_ID}] Lettura HR {hr_address} = {result.registers[0]}")
+        # --- Esecuzione azione ---
+        if action == "write_coil":
+            coil_address = random.randint(1, MAX_COIL)
+            coil_value = random.choice([True, False])
 
-        time.sleep(2)  # pausa tra le richieste
+            # Simula invio malformato con bassa probabilità
+            if random.random() < ERROR_PROB:
+                coil_address = 9999  # fuori range
+
+            try:
+                result = client.write_coil(coil_address, coil_value, unit=UNIT_ID)
+                if result.isError():
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Errore scrittura coil {coil_address}"
+                    )
+                else:
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Scrittura coil {coil_address} = {coil_value}"
+                    )
+            except ModbusException as e:
+                print(
+                    f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Eccezione scrittura coil: {e}"
+                )
+
+        elif action == "read_coil":
+            coil_address = random.randint(1, MAX_COIL)
+            try:
+                result = client.read_coils(coil_address, 1, unit=UNIT_ID)
+                if result.isError():
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Errore lettura coil {coil_address}"
+                    )
+                else:
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Lettura coil {coil_address} = {result.bits[0]}"
+                    )
+            except ModbusException as e:
+                print(
+                    f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Eccezione lettura coil: {e}"
+                )
+
+        elif action == "read_register":
+            hr_address = random.randint(0, MAX_REGISTER)
+            try:
+                result = client.read_holding_registers(hr_address, 1, unit=UNIT_ID)
+                if result.isError():
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Errore lettura HR {hr_address}"
+                    )
+                else:
+                    print(
+                        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Lettura HR {hr_address} = {result.registers[0]}"
+                    )
+            except ModbusException as e:
+                print(
+                    f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Eccezione lettura HR: {e}"
+                )
+
+        # --- Pausa casuale tra le operazioni ---
+        time.sleep(random.uniform(*SLEEP_RANGE))
 
 except KeyboardInterrupt:
-    print(f"[CLIENT-{UNIT_ID}] Interruzione richiesta dall'utente")
+    print(
+        f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Interruzione richiesta dall'utente"
+    )
 
 finally:
     client.close()
-    print(f"[CLIENT-{UNIT_ID}] Connessione chiusa")
+    print(f"[{datetime.now().isoformat()}][CLIENT-{UNIT_ID}] Connessione chiusa")

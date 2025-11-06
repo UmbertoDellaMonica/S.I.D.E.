@@ -19,3 +19,22 @@ class DeviceDiscoveryPublisher:
 
     def close(self):
         self.connection.close()
+
+
+class AlertPublisher:
+    def __init__(self, host="localhost", exchange="frontend.alerts"):
+        self.exchange = exchange
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=host))
+        self.channel = self.connection.channel()
+        self.channel.exchange_declare(exchange=exchange, exchange_type="fanout")
+
+    def publish(self, alert: dict):
+        """Invia un messaggio di alert o anomalia"""
+        self.channel.basic_publish(
+            exchange=self.exchange,
+            routing_key="",
+            body=json.dumps(alert),
+        )
+
+    def close(self):
+        self.connection.close()

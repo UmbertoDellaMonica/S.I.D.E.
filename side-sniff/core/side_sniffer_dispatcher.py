@@ -12,7 +12,7 @@ PROTOCOL_HANDLERS = {
     Protocol.MODBUS.value: modbus_packet_handler,
     Protocol.SNAP_7.value: s7_packet_handler,
     Protocol.OPC_UA.value: opcua_packet_handler,
-    # puoi aggiungere altri handler: "http": http_handler, "bacnet": bacnet_handler
+    # Other Handlers
 }
 
 

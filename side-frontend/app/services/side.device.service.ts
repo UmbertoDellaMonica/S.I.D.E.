@@ -33,3 +33,23 @@ export function useDevices() {
     queryFn: fetchDevices,
   });
 }
+
+import { useEffect, useState } from "react";
+
+export function useAlertSocket() {
+  const [hasNewAlert, setHasNewAlert] = useState(false);
+
+  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:5005/ws/alerts");
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log("Nuovo alert:", data);
+      setHasNewAlert(true); // attiva il pallino rosso
+    };
+
+    return () => ws.close();
+  }, []);
+
+  return { hasNewAlert, clearAlert: () => setHasNewAlert(false) };
+}

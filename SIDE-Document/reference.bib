@@ -1,0 +1,341 @@
+
+%1°
+@inproceedings{identificationPayloadIndustrialDevices,
+  author    = {Pospisil, Ondrej and Fujdiak, Radek},
+  title     = {Identification of industrial devices based on payload},
+  year      = {2024},
+  isbn      = {9798400717185},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3664476.3670462},
+  doi       = {10.1145/3664476.3670462},
+  abstract  = {Identification of industrial devices based on their behavior in network communication is important from a cybersecurity perspective in two areas: attack prevention and digital forensics. In both areas, device identification falls under asset management or asset tracking. Due to the impact of active scanning on these networks, particularly in terms of latency, it is important to use passive scanning in industrial networks. For passive identification, statistical learning algorithms are nowadays the most appropriate. The aim of this paper is to demonstrate the potential for passive identification of PLC devices using statistical learning based on network communication, specifically the payload of the packet. Individual statistical parameters from 15 minutes of traffic based on payload entropy were used to create the features. Three scenarios were performed and the XGBoost algorithm was used for evaluation. In the best scenario, the model achieved an accuracy score of 83\% to identify individual devices.},
+  booktitle = {Proceedings of the 19th International Conference on Availability, Reliability and Security},
+  articleno = {158},
+  numpages  = {9},
+  keywords  = {ICS, Identification, ML, OT, PLC, XGBoost},
+  location  = {Vienna, Austria},
+  series    = {ARES '24}
+}
+
+%2° 
+@article{scadaDiversityExploration,
+  author     = {Ortiz, Neil and Cardenas, Alvaro A. and Wool, Avishai},
+  title      = {SCADA World: An Exploration of the Diversity in Power Grid Networks},
+  year       = {2024},
+  issue_date = {March 2024},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {8},
+  number     = {1},
+  url        = {https://doi.org/10.1145/3639036},
+  doi        = {10.1145/3639036},
+  abstract   = {Despite a growing interest in understanding the industrial control networks that monitor and control our critical infrastructures (such as the power grid), to date, SCADA networks have been analyzed in isolation from each other. They have been treated as monolithic networks without taking into consideration their differences. In this paper, we analyze real-world data from different parts of a power grid (generation, transmission, distribution, and end-consumer) and show that these industrial networks exhibit a variety of unique behaviors and configurations that have not been documented before. To the best of our knowledge, our study is the first to tackle the analysis of power grid networks at this level. Our results help us dispel several misconceptions proposed by previous work, and we also provide new insights into the differences and types of SCADA networks.},
+  journal    = {Proc. ACM Meas. Anal. Comput. Syst.},
+  month      = feb,
+  articleno  = {10},
+  numpages   = {32},
+  keywords   = {goose, iccp, iec 60870-5-104, ieee c37.118, modbus/tcp, scada traffic}
+}
+
+%3°
+@inproceedings{plcCybersecuirtyRisk,
+  author    = {Da Silva, Mike and Puys, Maxime and Thevenon, Pierre-Henri and Mocanu, Stephane},
+  title     = {PLC Logic-Based Cybersecurity Risks Identification for ICS},
+  year      = {2023},
+  isbn      = {9798400707728},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3600160.3605067},
+  doi       = {10.1145/3600160.3605067},
+  abstract  = {In recent years, Informational Technologies (IT) was massively deployed into Industrial Control Systems (ICS) mainly for its economic benefits. However, this new paradigm, converging IT and Operational Technologies (OT), brings new challenges that companies need to face. Historically, ICS had to cope with safety requirements which ensure the protection of people, environment, and assets. Now, ICS must deal with additional threats, coming from cyberattacks, in order to maintain safety. For that purpose, it becomes essential to develop new cybersecurity technologies and methodologies that allow to assess the safety of ICS against cyberattacks. In this paper, we propose a new methodology, based on Programmable Logic Controller (PLC) logic in order to identify cyberattacks that impacts the ICS safety. Our methodology transforms a PLC logic into a finite-state machine that represents the PLC behavior. Then, using this automaton, we identify which modifications in states of sensors and actuators leads to compromising the safety. Finally, we build attack scenarios from these events and the network vulnerabilities. We apply our methodology on a simple example, yet challenging to analyze by hand, and we show how we manage to scale up on a classical example from the control systems domain: the Tennessee Eastman chemical process.},
+  booktitle = {Proceedings of the 18th International Conference on Availability, Reliability and Security},
+  articleno = {117},
+  numpages  = {10},
+  keywords  = {Cybersecurity, ICS, IT, OT, Risk analysis, Risk assessment, SCADA, Safety, Security},
+  location  = {Benevento, Italy},
+  series    = {ARES '23}
+}
+
+%4°
+@article{supervisedLearningIdsScada,
+  author     = {Suaboot, Jakapan and Fahad, Adil and Tari, Zahir and Grundy, John and Mahmood, Abdun Naser and Almalawi, Abdulmohsen and Zomaya, Albert Y. and Drira, Khalil},
+  title      = {A Taxonomy of Supervised Learning for IDSs in SCADA Environments},
+  year       = {2020},
+  issue_date = {March 2021},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {53},
+  number     = {2},
+  issn       = {0360-0300},
+  url        = {https://doi.org/10.1145/3379499},
+  doi        = {10.1145/3379499},
+  abstract   = {Supervisory Control and Data Acquisition (SCADA) systems play an important role in monitoring industrial processes such as electric power distribution, transport systems, water distribution, and wastewater collection systems. Such systems require a particular attention with regards to security aspects, as they deal with critical infrastructures that are crucial to organizations and countries. Protecting SCADA systems from intrusion is a very challenging task because they do not only inherit traditional IT security threats but they also include additional vulnerabilities related to field components (e.g., cyber-physical attacks). Many of the existing intrusion detection techniques rely on supervised learning that consists of algorithms that are first trained with reference inputs to learn specific information, and then tested on unseen inputs for classification purposes. This article surveys supervised learning from a specific security angle, namely SCADA-based intrusion detection. Based on a systematic review process, existing literature is categorized and evaluated according to SCADA-specific requirements. Additionally, this survey reports on well-known SCADA datasets and testbeds used with machine learning methods. Finally, we present key challenges and our recommendations for using specific supervised methods for SCADA systems.},
+  journal    = {ACM Comput. Surv.},
+  month      = apr,
+  articleno  = {40},
+  numpages   = {37},
+  keywords   = {SCADA security, machine learning, network intrusion, supervised learning}
+}
+
+%5°
+@inproceedings{idsScadaFrameworkIncorporateProcessSemantics,
+  author    = {Nivethan, Jeyasingam and Papa, Mauricio},
+  title     = {A SCADA Intrusion Detection Framework that Incorporates Process Semantics},
+  year      = {2016},
+  isbn      = {9781450337526},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2897795.2897814},
+  doi       = {10.1145/2897795.2897814},
+  abstract  = {SCADA security is an increasingly important research area as these systems, used for process control and automation, are being exposed to the Internet due to their use of TCP/IP protocols as a transport mechanism for control messages. Most of the existing research work on SCADA systems has focused on addressing SCADA security by monitoring attacks or anomalies at the network level. The main issue affecting these systems today is that by focusing our attention on network-level monitoring needs, security practitioners may remain unaware of process level constraints. The proposed framework helps ensure that a mechanism is in place to help map process level constraints, as described by process engineers, to network level monitoring needs. Existing solutions have tried to address this problem but have not been able to fully bridge the gap between the process and the network. The goal of this research is to provide a solution that (i) leverages the knowledge process engineers have about the system (to help strengthen cyber security) and that has the ability to (ii) seamlessly monitors process constraints at the network level using standard network security tools. A prototype system for the Modbus TCP protocol and the Bro IDS has been built to validate the approach.},
+  booktitle = {Proceedings of the 11th Annual Cyber and Information Security Research Conference},
+  articleno = {6},
+  numpages  = {5},
+  keywords  = {SCADA security, intrusion detection, network security, process monitoring},
+  location  = {Oak Ridge, TN, USA},
+  series    = {CISRC '16}
+}
+
+%6°
+@inproceedings{diderotIds,
+  author    = {Radoglou-Grammatikis, Panagiotis and Sarigiannidis, Panagiotis and Efstathopoulos, George and Karypidis, Paris-Alexandros and Sarigiannidis, Antonios},
+  title     = {DIDEROT: an intrusion detection and prevention system for DNP3-based SCADA systems},
+  year      = {2020},
+  isbn      = {9781450388337},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3407023.3409314},
+  doi       = {10.1145/3407023.3409314},
+  abstract  = {In this paper, an Intrusion Detection and Prevention System (IDPS) for the Distributed Network Protocol 3 (DNP3) Supervisory Control and Data Acquisition (SCADA) systems is presented. The proposed IDPS is called DIDEROT (Dnp3 Intrusion DetEction pReventiOn sysTem) and relies on both supervised Machine Learning (ML) and unsupervised/outlier ML detection models capable of discriminating whether a DNP3 network flow is related to a particular DNP3 cyberattack or anomaly. First, the supervised ML detection model is applied, trying to identify whether a DNP3 network flow is related to a specific DNP3 cyberattack. If the corresponding network flow is detected as normal, then the unsupervised/outlier ML anomaly detection model is activated, seeking to recognise the presence of a possible anomaly. Based on the DIDEROT detection results, the Software Defined Networking (SDN) technology is adopted in order to mitigate timely the corresponding DNP3 cyberattacks and anomalies. The performance of DIDEROT is demonstrated using real data originating from a substation environment.},
+  booktitle = {Proceedings of the 15th International Conference on Availability, Reliability and Security},
+  articleno = {115},
+  numpages  = {8},
+  keywords  = {smart grid, machine learning, intrusion detection, autonencoder, anomaly detection, SDN, SCADA},
+  location  = {Virtual Event, Ireland},
+  series    = {ARES '20}
+}
+
+%7°
+@inproceedings{semanticSecurityAnalysisScadaNetwork,
+  author    = {Lin, Hui and Slagell, Adam and Kalbarczyk, Zbigniew and Iyer, Ravishankar K.},
+  title     = {Semantic Security Analysis of SCADA Networks to Detect Malicious Control Commands in Power Grids (Poster)},
+  year      = {2014},
+  isbn      = {9781450330336},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2659651.2659746},
+  doi       = {10.1145/2659651.2659746},
+  abstract  = {In this poster, we present a semantic analysis framework based on a collaborative network of intrusion detection systems (IDSes) that we proposed in [3] to detect control-related attacks in power systems. The framework combines system knowledge of both cyber and physical infrastructure in power grids to help the IDS to estimate execution consequences of control commands. We demonstrate the implementation based on Bro IDS [11] and the experimental results on the performance overhead of the semantic analysis framework.},
+  booktitle = {Proceedings of the 7th International Conference on Security of Information and Networks},
+  pages     = {492–495},
+  numpages  = {4},
+  keywords  = {semantic analysis, intrusion detection system, SCADA},
+  location  = {Glasgow, Scotland, UK},
+  series    = {SIN '14}
+}
+
+%8°
+@inproceedings{architectingCyberSecSmartGrid,
+  author    = {Majed, Shahir and Ibrahim, Suhaimi and Shaaban, Mohamed},
+  title     = {Architecting and Development of the SecureCyber: A SCADA Security platform Over Energy Smart Grid},
+  year      = {2014},
+  isbn      = {9781450330015},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2684200.2684308},
+  doi       = {10.1145/2684200.2684308},
+  abstract  = {This paper documents the design and implementation of the platform while proposing cyber attack scenarios which will gave high impact towards grid operations. In addition, we documents the results of an initial cyber vulnerability assessment to evaluate the security posture assessment of the current design.},
+  booktitle = {Proceedings of the 16th International Conference on Information Integration and Web-Based Applications \& Services},
+  pages     = {170–174},
+  numpages  = {5},
+  keywords  = {Critical Infrastructure Protection, Security Metrics, Smart Grid Security, Vulnerability Assessment},
+  location  = {Hanoi, Viet Nam},
+  series    = {iiWAS '14}
+}
+
+
+%9°
+@inproceedings{graphNeuralNetworkIdsElectrical,
+  author    = {Bai, Siqi},
+  title     = {Anomaly Detection of Electrical Load in Power Systems Based on Graph Neural Networks},
+  year      = {2024},
+  isbn      = {9798400718137},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3689236.3689283},
+  doi       = {10.1145/3689236.3689283},
+  abstract  = {In response to the difficulties in feature extraction, poor model generalization ability, and high computational complexity in traditional research on anomaly detection of electrical loads, this article investigated a detection method based on Graph Convolutional Networks (GCNs). By constructing a graph structure of power grid nodes and edges, and using GCN for feature extraction, this method achieved an accuracy of 93.4\%, a recall rate of 91.8\%, and an F1 score of 92.6\% in the experiment, which was significantly better than traditional models. In addition, this article also explored the influence of model parameters, and further verified the robustness of the method by adjusting the learning rate and network layers. The experimental results showed that the GCN-based method can not only effectively detect and locate abnormal electrical load, but also provide effective technical support for intelligent management of the power grid.},
+  booktitle = {Proceedings of the 2024 9th International Conference on Cyber Security and Information Engineering},
+  pages     = {529–534},
+  numpages  = {6},
+  keywords  = {Electrical Load Anomaly Detection, Graph Convolutional Network, Graph Neural Network, Power System},
+  location  = {
+               },
+  series    = {ICCSIE '24}
+}
+
+%10°
+@inproceedings{graphBasedActiveCyberDefense,
+  author    = {Lakhdhar, Yosra and Rekhis, Slim and Boudriga, Noureddine},
+  title     = {An Approach To A Graph-Based Active Cyber Defense Model},
+  year      = {2016},
+  isbn      = {9781450348065},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3007120.3007142},
+  doi       = {10.1145/3007120.3007142},
+  abstract  = {Securing cyber system is a major concern as security attacks become more and more sophisticated. We develop in this paper a novel graph-based Active Cyber Defense (ACD) model to proactively respond to cyber attacks. The proposed model is based on the use of a semantically rich graph to describe cyber systems, types of used interconnection between them, and security related data useful to develop active defense strategies. The developed model takes into consideration the probabilistic nature of cyber attacks, and their degree of complexity. In this context, analytics are provided to proactively test the impact of vulnerabilities/threats increase on the system, analyze the consequent behavior of cyber systems and security solution, and decide about the security state of the whole cyber system. Our model integrates in the same framework decisions made by cyber defenders based on their expertise and knowledge, and decisions that are automatically generated using security analytic rules.},
+  booktitle = {Proceedings of the 14th International Conference on Advances in Mobile Computing and Multi Media},
+  pages     = {261–268},
+  numpages  = {8},
+  location  = {Singapore, Singapore},
+  series    = {MoMM '16}
+}
+
+
+%11°
+@inproceedings{precinct,
+  author    = {Amadou Kountche, Djibrilla and Aubert, Jocelyn and Nguyen, Manh-Dung and Kalfa, Natalia and Durante, Nicola Gregorio and Passerini, Cristiano and Kuding, Stephane},
+  title     = {The PRECINCT Ecosystem Platform for Critical Infrastructure Protection: Architecture, Deployment and Transferability},
+  year      = {2024},
+  isbn      = {9798400717185},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3664476.3670437},
+  doi       = {10.1145/3664476.3670437},
+  abstract  = {The present work was done during the PRECINCT (Preparedness and Resilience Enforcement for Critical INfrastructure Cascading Cyberphysical Threats and effects with focus on district or regional protection) project. The PRECINCT Ecosystem Platform (PEP), part of the PRECINCT approach, serves to “unify” different Critical Infrastructures (CIs) – through a cybersecurity ecosystem platform - and helps in improving facility protection against cascading effects resulting from cyber-physical attacks, in minimizing service disruptions and in managing interfaces with other CIs. In recent years, CIs have been equipped with Industrial Internet of Things (IIoT) technologies including sensors and actuators which communicate using open protocols (e.g., MQTT, AMQP, CoAP, Modbus, DNP3) or commercially licensed protocols (LoRA, IEC 6870-5-101, Profibus) to share data and commands. Furthermore, the management of these CIs is built on Information Communication Technologies (ICTs) which became Critical Information Infrastructure (CII). Therefore, this paper proposes an approach for the deployment of ICT tools used in CI Protection (CIP) projects. Indeed, the PEP’s deployment in PRECINCT’s Living Labs (LLs) was described using Topology and Orchestration Specification for Cloud Applications (TOSCA). TOSCA, in addition to the usage of reference architectures, is proposed by this paper for re-usability and transferability of CIP projects outcomes.},
+  booktitle = {Proceedings of the 19th International Conference on Availability, Reliability and Security},
+  articleno = {167},
+  numpages  = {8},
+  keywords  = {Critical Infrastructure Protection, Reference Architecture, TOSCA},
+  location  = {Vienna, Austria},
+  series    = {ARES '24}
+}
+
+%12°
+@inproceedings{simulationImplementationSecurityServices,
+  author    = {Musa, Shahrulniza and Shahzad, AAmir and Aborujilah, Abdulaziz},
+  title     = {Simulation base implementation for placement of security services in real time environment},
+  year      = {2013},
+  isbn      = {9781450319584},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/2448556.2448587},
+  doi       = {10.1145/2448556.2448587},
+  abstract  = {SCADA (Supervisory Control and Data Acquisition) is a real time systems that are deployed over real time infrastructure such as water pumping stations, oil purification plants and rail control centers etc. These systems were connected with local area network or limited networks but now with the latest technology and facilities in real time infrastructure these systems are also moving from local area network to the internet. Using internet communication, these systems are attacked by several attacks therefore these systems need protection from different kinds of attacks/threads to secure communication between devices that are communicating with SCADA environment. The current research takes the Hybrid-based Cryptography solution using "Symmetric AES and Asymmetric RSA algorithms" to secure the SCADA communication by implementing security services such as authentication, confidentiality, and Non- Repudiation. Simulation environment is used to verify propose a solution is implemented properly between Master Terminal Unit (MTU) and Remote Terminal Unit (RTUs) during the transmission of payload (data) in a wireless network.},
+  booktitle = {Proceedings of the 7th International Conference on Ubiquitous Information Management and Communication},
+  articleno = {31},
+  numpages  = {5},
+  keywords  = {wireless network, simulation base experimentation, security services, security issues, cryptography algorithms, cryptography, SCADA (supervisory control and data acquisition)},
+  location  = {Kota Kinabalu, Malaysia},
+  series    = {ICUIMC '13}
+}
+
+%13°
+@inproceedings{suricataEnhancingIdsCyberSecurity,
+  author    = {Wong, Kevin and Dillabaugh, Craig and Seddigh, Nabil and Nandy, Biswajit},
+  booktitle = {2017 IEEE 30th Canadian Conference on Electrical and Computer Engineering (CCECE)},
+  title     = {Enhancing Suricata intrusion detection system for cyber security in SCADA networks},
+  year      = {2017},
+  volume    = {},
+  number    = {},
+  pages     = {1-5},
+  keywords  = {Protocols;Integrated circuits;Encapsulation;Intrusion detection;Tools;Computer security;SCADA;Industrial Control;Cyber Security;Intrusion Detection Systems;IDS;Suricata;EtherNet/IP Protocol},
+  doi       = {10.1109/CCECE.2017.7946818}
+}
+
+
+%14°
+@inproceedings{tripleLayerScadaSecurityOfElectricUtility,
+  author    = {Samdarshi, Rishabh and Sinha, Nidul and Tripathi, Paritosh},
+  booktitle = {2015 Annual IEEE India Conference (INDICON)},
+  title     = {A triple layer intrusion detection system for SCADA security of electric utility},
+  year      = {2015},
+  volume    = {},
+  number    = {},
+  pages     = {1-5},
+  keywords  = {SCADA systems;Internet;Intrusion detection;Sensors;Machine learning algorithms;Instruments;SCADA;SCADA Security;Intrusion Detection},
+  doi       = {10.1109/INDICON.2015.7443439}
+}
+
+
+%15°
+@inproceedings{ruleBasedScadaNetwork,
+  author    = {Yang, Y. and McLaughlin, K. and Littler, T. and Sezer, S. and Wang, H.F.},
+  booktitle = {2nd IET Renewable Power Generation Conference (RPG 2013)},
+  title     = {Rule-based intrusion detection system for SCADA networks},
+  year      = {2013},
+  volume    = {},
+  number    = {},
+  pages     = {1-4},
+  keywords  = {SCADA;Cyber-Security;Intrusion Detection;IEC 60870-5-104},
+  doi       = {10.1049/cp.2013.1729}
+}
+
+%16°
+@article{cyberSecurityAgricoltureMachineLearning,
+  author   = {Ferrag, Mohamed Amine and Shu, Lei and Friha, Othmane and Yang, Xing},
+  journal  = {IEEE/CAA Journal of Automatica Sinica},
+  title    = {Cyber Security Intrusion Detection for Agriculture 4.0: Machine Learning-Based Solutions, Datasets, and Future Directions},
+  year     = {2022},
+  volume   = {9},
+  number   = {3},
+  pages    = {407-436},
+  keywords = {Performance evaluation;Cloud computing;Intrusion detection;Machine learning;Agriculture;Smart grids;Internet of Things;Agriculture 4.0;cyber security;intrusion detection system;machine learning approaches;smart agriculture},
+  doi      = {10.1109/JAS.2021.1004344}
+}
+
+%17°
+@article{alasiri202034,
+  title    = {On Using Physical Based Intrusion Detection in SCADA Systems},
+  journal  = {Procedia Computer Science},
+  volume   = {170},
+  pages    = {34-42},
+  year     = {2020},
+  note     = {The 11th International Conference on Ambient Systems, Networks and Technologies (ANT) / The 3rd International Conference on Emerging Data and Industry 4.0 (EDI40) / Affiliated Workshops},
+  issn     = {1877-0509},
+  doi      = {https://doi.org/10.1016/j.procs.2020.03.007},
+  url      = {https://www.sciencedirect.com/science/article/pii/S1877050920304294},
+  author   = {Majed Al-Asiri and El-Sayed M. El-Alfy},
+  keywords = {Information Security, SCADA, Industrial Control Systems, Cyber Physical Systems (CPS), Industrial Internet of Things (IIoT), Intrusion Detection, Taxonomy},
+  abstract = {Intrusion detection in SCADA systems has received increased attention from researchers as connectivity to public networks became a necessity in many industries. The nature and characteristics of SCADA systems call for special considerations and techniques of intrusion detection. Many works have been made in this field, ranging from generic intrusion detection techniques to customized solutions designed specifically for SCADA systems. In the recent years, some works have focused on using physical metrics in addition to the popular network-based and host-based intrusion detection approaches. This paper presents a taxonomy that considers the special features of cyberphysical intrusion detection systems (IDSs) with examples from the literature. Moreover, a case study is presented for a simulated gas pipeline dataset to compare the effectiveness of decision tree classifiers for various categories of features in SCADA systems. The results show that an IDS that uses a combination of physical and network metrics significantly outperforms an IDS that only uses network metrics or physical metrics.}
+}
+
+
+%18°
+@article{aiScada,
+  author   = {Yalçın, Nesibe and Çakır, Semih and Ünaldı, Sibel},
+  journal  = {IEEE Internet of Things Journal},
+  title    = {Attack Detection Using Artificial Intelligence Methods for SCADA Security},
+  year     = {2024},
+  volume   = {11},
+  number   = {24},
+  pages    = {39550-39559},
+  keywords = {SCADA systems;Cyberattack;Artificial intelligence;Security;Industrial Internet of Things;Nearest neighbor methods;Reconnaissance;Artificial intelligence (AI);attack detection;cyber security;Industrial Internet of Things (IIoT);supervisory control and data acquisition (SCADA)},
+  doi      = {10.1109/JIOT.2024.3447876}
+}
+
+
+%19°
+@article{scadaAttacks,
+  title   = {SCADA vulnerabilities and attacks: A review of the state-of-the-art and open issues},
+  journal = {Computers and Security},
+  volume  = {125},
+  pages   = {103028},
+  year    = {2023},
+  author  = {Manar Alanazi and Abdun Mahmood and Mohammad Jabed Morshed Chowdhury},
+  doi     = {https://doi.org/10.1016/j.cose.2022.103028}
+}
+
+%%%%% - Dataset MODBUS %%%%
+
+% 1° Database - Modbus Attacks 
+@misc{DatasetModbus,
+  doi       = {10.21227/pjff-1a03},
+  url       = {https://dx.doi.org/10.21227/pjff-1a03},
+  author    = {Ivo Frazão and Pedro Abreu and Tiago Cruz and Helder Araújo and Paulo Simões},
+  publisher = {IEEE Dataport},
+  title     = {Cyber-security Modbus ICS dataset},
+  year      = {2019}
+}

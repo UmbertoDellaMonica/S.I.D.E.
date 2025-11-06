@@ -1,0 +1,106 @@
+\documentclass[a4paper,12pt]{report}
+
+% --- Pacchetti base ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt} % <-- aggiungi questa riga
+\usepackage{titlesec}
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes, backgrounds ,calc, decorations.pathmorphing}
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ynt
+]{biblatex}
+
+\addbibresource{reference.bib}
+
+
+% --- Margini e spaziatura ---
+\geometry{a4paper, margin=2.5cm}
+\onehalfspacing
+
+% --- Header e footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Report di Progetto}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% --- Hyperlink setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdftitle={Report Progetto IoT Security},
+    pdfauthor={Nome Cognome}
+}
+
+% --- Stile dei capitoli ---
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}{\thechapter.}{1em}{}
+
+% --- Stile del codice sorgente ---
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray!70},
+    stringstyle=\color{green!60!black}
+}
+
+% --- Inizio documento ---
+\begin{document}
+
+% --- Frontespizio ---
+\input{section/first_page.tex}
+
+% --- Abstract ---
+\begin{abstract}
+Il progetto S.I.D.E. (SCADA/ICS Industrial Defense Environment) propone un ambiente di simulazione completo per testare e valutare la sicurezza dei sistemi industriali.  
+Integrando simulatori per protocolli Modbus TCP, Siemens S7 e OPC-UA, S.I.D.E. permette di generare traffico realistico tra server e client, includendo comportamenti normali e anomalie controllate.  
+Il sistema supporta inoltre l’analisi delle comunicazioni e l’integrazione con tecniche di rilevazione delle intrusioni, fornendo un framework flessibile per la sperimentazione di metodologie di difesa attiva, monitoraggio semantico e validazione di scenari di attacco realistici.  
+Grazie alla combinazione di simulazione di dispositivi, raccolta dati e logging avanzato, S.I.D.E. rappresenta uno strumento utile per la ricerca, la formazione e la valutazione della resilienza dei sistemi ICS/SCADA.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---  Introduction 
+\input{section/1_Introduction.tex}
+
+% --- Capitolo 1: Lavori Correlati ---
+\input{section/2_Related_Work.tex}
+
+% --- Capitolo 3: Architettura e strumenti ---
+\input{section/3_System_Architecture.tex}
+
+% --- Capitolo 4: Attacchi SCADA ---
+
+\input{section/4_SCADA_Attack.tex}
+
+% --- Capitolo 5: Conclusioni ---
+\input{section/5_Conclusion.tex}
+
+
+% --- Bibliografia ---
+\printbibliography
+
+\end{document}
