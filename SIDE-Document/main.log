@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.29)  6 NOV 2025 16:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.29)  9 NOV 2025 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -969,7 +969,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Info: Reference section=0 on input line 70.
 Package biblatex Info: Reference segment=0 on input line 70.
  (section/first_page.tex
-<img/logo_unisa.png, id=222, 351.3125pt x 351.3125pt>
+<img/logo_unisa.png, id=226, 351.3125pt x 351.3125pt>
 File: img/logo_unisa.png Graphic file (type png)
 <use img/logo_unisa.png>
 Package pdftex.def Info: img/logo_unisa.png  used on input line 6.
@@ -999,7 +999,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ... \texttt {/devices}}{24}{subsection.3.5.2}
+l.54 ...shboard interattiva}{32}{subsection.3.5.1}
                                                   % [1
 
 ])
@@ -1026,103 +1026,87 @@ Capitolo 2.
 
 [6]
 Capitolo 3.
+<img/side-env.png, id=367, 4216.75375pt x 2734.215pt>
+File: img/side-env.png Graphic file (type png)
+<use img/side-env.png>
+Package pdftex.def Info: img/side-env.png  used on input line 19.
+(pdftex.def)             Requested size: 364.19667pt x 236.1392pt.
 
 
 [7
 
 ]
-<img/side-sniff-image/select_interface.png, id=367, 689.57625pt x 178.266pt>
+
+[8 <./img/side-env.png>]
+<img/side-sniff-image/select_interface.png, id=381, 689.57625pt x 178.266pt>
 File: img/side-sniff-image/select_interface.png Graphic file (type png)
 <use img/side-sniff-image/select_interface.png>
-Package pdftex.def Info: img/side-sniff-image/select_interface.png  used on input line 47.
+Package pdftex.def Info: img/side-sniff-image/select_interface.png  used on input line 57.
 (pdftex.def)             Requested size: 341.43307pt x 88.26505pt.
 
 
-[8]
-<img/side-sniff-image/radix_tree_protocol.png, id=377, 1027.84pt x 1541.76pt>
+[9 <./img/side-sniff-image/select_interface.png>]
+<img/side-sniff-image/radix_tree_protocol.png, id=392, 1027.84pt x 1541.76pt>
 File: img/side-sniff-image/radix_tree_protocol.png Graphic file (type png)
 <use img/side-sniff-image/radix_tree_protocol.png>
-Package pdftex.def Info: img/side-sniff-image/radix_tree_protocol.png  used on input line 70.
+Package pdftex.def Info: img/side-sniff-image/radix_tree_protocol.png  used on input line 80.
 (pdftex.def)             Requested size: 227.62206pt x 341.42316pt.
- (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
+
+
+[10 <./img/side-sniff-image/radix_tree_protocol.png (PNG copy)>] (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 97.
 
-[9 <./img/side-sniff-image/select_interface.png>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 87.
-
-Overfull \hbox (38.08943pt too wide) in paragraph at lines 95--96
+Overfull \hbox (38.08943pt too wide) in paragraph at lines 105--106
 []\T1/cmr/m/n/12 In fa-se di ana-li-si, la fun-zio-ne \T1/cmtt/m/n/12 dispatch_packet() \T1/cmr/m/n/12 co-strui-sce una chia-ve \T1/cmtt/m/n/12 "<layer>-<porta>"
  []
 
 
 
-[10 <./img/side-sniff-image/radix_tree_protocol.png (PNG copy)>]
-<img/side-sniff-image/modbus_header.png, id=398, 587.19376pt x 180.675pt>
+[11]
+<img/side-sniff-image/modbus_header.png, id=412, 587.19376pt x 180.675pt>
 File: img/side-sniff-image/modbus_header.png Graphic file (type png)
 <use img/side-sniff-image/modbus_header.png>
-Package pdftex.def Info: img/side-sniff-image/modbus_header.png  used on input line 114.
+Package pdftex.def Info: img/side-sniff-image/modbus_header.png  used on input line 124.
 (pdftex.def)             Requested size: 386.96027pt x 119.0639pt.
-
-
-[11 <./img/side-sniff-image/modbus_header.png>]
-<img/side-sniff-image/snap7_header.png, id=407, 584.93532pt x 151.3153pt>
+<img/side-sniff-image/snap7_header.png, id=413, 584.93532pt x 151.3153pt>
 File: img/side-sniff-image/snap7_header.png Graphic file (type png)
 <use img/side-sniff-image/snap7_header.png>
-Package pdftex.def Info: img/side-sniff-image/snap7_header.png  used on input line 129.
+Package pdftex.def Info: img/side-sniff-image/snap7_header.png  used on input line 139.
 (pdftex.def)             Requested size: 386.96027pt x 100.10622pt.
-<img/side-sniff-image/opc_ua_header.png, id=408, 385.44pt x 131.49126pt>
+
+
+[12 <./img/side-sniff-image/modbus_header.png> <./img/side-sniff-image/snap7_header.png>]
+<img/side-sniff-image/opc_ua_header.png, id=422, 385.44pt x 131.49126pt>
 File: img/side-sniff-image/opc_ua_header.png Graphic file (type png)
 <use img/side-sniff-image/opc_ua_header.png>
-Package pdftex.def Info: img/side-sniff-image/opc_ua_header.png  used on input line 143.
+Package pdftex.def Info: img/side-sniff-image/opc_ua_header.png  used on input line 153.
 (pdftex.def)             Requested size: 386.96027pt x 132.00856pt.
 
 
-[12 <./img/side-sniff-image/snap7_header.png> <./img/side-sniff-image/opc_ua_header.png>]
+[13 <./img/side-sniff-image/opc_ua_header.png>]
 
-[13]
-Overfull \hbox (6.88889pt too wide) in paragraph at lines 192--195
+[14]
+Overfull \hbox (6.88889pt too wide) in paragraph at lines 230--233
 \T1/cmr/m/n/12 lo con-for-me al-la pi-la TPKT $\OMS/cmsy/m/n/12 !$ \T1/cmr/m/n/12 COTP $\OMS/cmsy/m/n/12 !$ \T1/cmr/m/n/12 S7Comm. La fun-zio-ne \T1/cmtt/m/n/12 parse_s7_payload()
  []
 
 
 
-[14]
-
 [15]
-Overfull \hbox (15.78276pt too wide) in paragraph at lines 260--261
-[]\T1/cmr/bx/n/12 Media Mo-bi-le Espo-nen-zia-le (EMA)\T1/cmr/m/n/12 : at-ti-va-ta con il pa-ra-me-tro \T1/cmtt/m/n/12 use_ema=True\T1/cmr/m/n/12 ,
- []
-
-
 
 [16]
-<img/side-sniff-image/neo4_logo.png, id=451, 192.72pt x 96.36pt>
-File: img/side-sniff-image/neo4_logo.png Graphic file (type png)
-<use img/side-sniff-image/neo4_logo.png>
-Package pdftex.def Info: img/side-sniff-image/neo4_logo.png  used on input line 336.
-(pdftex.def)             Requested size: 71.13188pt x 35.56587pt.
 
-
-[17 <./img/side-sniff-image/neo4_logo.png>]
-Overfull \hbox (19.712pt too wide) in paragraph at lines 373--374
-[]\T1/cmr/m/n/12 Pubblica gli even-ti ela-bo-ra-ti su un ex-chan-ge de-di-ca-to ver-so i mo-du-li \T1/cmtt/m/n/12 side-api-back-end
- []
-
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 380.
-
+[17]
 
 [18]
 
 [19]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 450.
-
 
 [20]
-Overfull \hbox (22.46056pt too wide) in paragraph at lines 481--481
-|[]\T1/cmr/bx/n/14.4 Gestione de-gli even-ti asin-cro-ni: \T1/cmtt/m/n/14.4 service_discovery_consumer.py| 
+Overfull \hbox (15.78276pt too wide) in paragraph at lines 455--456
+[]\T1/cmr/bx/n/12 Media Mo-bi-le Espo-nen-zia-le (EMA)\T1/cmr/m/n/12 : at-ti-va-ta con il pa-ra-me-tro \T1/cmtt/m/n/12 use_ema=True\T1/cmr/m/n/12 ,
  []
 
 
@@ -1130,62 +1114,42 @@ Overfull \hbox (22.46056pt too wide) in paragraph at lines 481--481
 [21]
 
 [22]
-File: img/side-sniff-image/neo4_logo.png Graphic file (type png)
-<use img/side-sniff-image/neo4_logo.png>
-Package pdftex.def Info: img/side-sniff-image/neo4_logo.png  used on input line 572.
-(pdftex.def)             Requested size: 71.13188pt x 35.56587pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 1147) in paragraph at lines 522--522
+[]\T1/cmr/m/n/12 Listing 3.6: |Uti-liz-zo e in-te-gra-zio-ne del Mo-del-lo di Ma-chi-ne Lear-ning al-l'in-ter-no
+ []
 
 
 
 [23]
-<img/side-frontend/dashboard_example.png, id=523, 1444.64719pt x 653.44125pt>
-File: img/side-frontend/dashboard_example.png Graphic file (type png)
-<use img/side-frontend/dashboard_example.png>
-Package pdftex.def Info: img/side-frontend/dashboard_example.png  used on input line 612.
-(pdftex.def)             Requested size: 364.19667pt x 164.72589pt.
-
 
 [24]
-<img/side-frontend/devices_example.png, id=529, 1444.64719pt x 654.19406pt>
-File: img/side-frontend/devices_example.png Graphic file (type png)
-<use img/side-frontend/devices_example.png>
-Package pdftex.def Info: img/side-frontend/devices_example.png  used on input line 630.
-(pdftex.def)             Requested size: 364.19667pt x 164.91566pt.
-<img/side-frontend/devices_alarms_zscore.png, id=530, 1442.38875pt x 727.21687pt>
-File: img/side-frontend/devices_alarms_zscore.png Graphic file (type png)
-<use img/side-frontend/devices_alarms_zscore.png>
-Package pdftex.def Info: img/side-frontend/devices_alarms_zscore.png  used on input line 647.
-(pdftex.def)             Requested size: 364.19667pt x 183.61249pt.
+<img/side-sniff-image/neo4_logo.png, id=676, 192.72pt x 96.36pt>
+File: img/side-sniff-image/neo4_logo.png Graphic file (type png)
+<use img/side-sniff-image/neo4_logo.png>
+Package pdftex.def Info: img/side-sniff-image/neo4_logo.png  used on input line 609.
+(pdftex.def)             Requested size: 71.13188pt x 35.56587pt.
 
-
-[25 <./img/side-frontend/dashboard_example.png> <./img/side-frontend/devices_example.png>]
-<img/side-frontend/dashboard_neo4j.png, id=539, 1444.64719pt x 725.71124pt>
-File: img/side-frontend/dashboard_neo4j.png Graphic file (type png)
-<use img/side-frontend/dashboard_neo4j.png>
-Package pdftex.def Info: img/side-frontend/dashboard_neo4j.png  used on input line 671.
-(pdftex.def)             Requested size: 364.19667pt x 182.94443pt.
-
-
-[26 <./img/side-frontend/devices_alarms_zscore.png>]
-Overfull \hbox (29.30711pt too wide) in paragraph at lines 697--698
-\T1/cmr/m/n/12 I pac-chet-ti di re-te cat-tu-ra-ti in con-te-sti SCA-DA/ICS so-no or-ga-niz-za-ti nel-la car-tel-la \T1/cmtt/m/n/12 data-modbus\T1/cmr/m/n/12 .
+Overfull \hbox (19.712pt too wide) in paragraph at lines 646--647
+[]\T1/cmr/m/n/12 Pubblica gli even-ti ela-bo-ra-ti su un ex-chan-ge de-di-ca-to ver-so i mo-du-li \T1/cmtt/m/n/12 side-api-back-end
  []
 
 
 
-[27 <./img/side-frontend/dashboard_neo4j.png>]
-Overfull \hbox (25.51898pt too wide) in paragraph at lines 721--722
-[]\T1/cmr/bx/n/12 Preprocessing: \T1/cmr/m/n/12 le fea-tu-re nu-me-ri-che ven-go-no stan-dar-diz-za-te me-dian-te \T1/cmtt/m/n/12 StandardScaler
- []
+[25 <./img/side-sniff-image/neo4_logo.png>]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 653.
 
+
+[26]
+
+[27]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 723.
 
 
 [28]
-Overfull \hbox (25.2454pt too wide) in paragraph at lines 760--762
-[]\T1/cmr/m/n/12 Il ser-ver espo-ne in-for-ma-zio-ni iden-ti-fi-ca-ti-ve stan-dard tra-mi-te \T1/cmtt/m/n/12 ModbusDeviceIdentification
+Overfull \hbox (22.46056pt too wide) in paragraph at lines 754--754
+|[]\T1/cmr/bx/n/14.4 Gestione de-gli even-ti asin-cro-ni: \T1/cmtt/m/n/14.4 service_discovery_consumer.py| 
  []
 
 
@@ -1193,37 +1157,96 @@ Overfull \hbox (25.2454pt too wide) in paragraph at lines 760--762
 [29]
 
 [30]
-Overfull \hbox (4.8185pt too wide) in paragraph at lines 825--826
+File: img/side-sniff-image/neo4_logo.png Graphic file (type png)
+<use img/side-sniff-image/neo4_logo.png>
+Package pdftex.def Info: img/side-sniff-image/neo4_logo.png  used on input line 845.
+(pdftex.def)             Requested size: 71.13188pt x 35.56587pt.
+
+
+[31]
+<img/side-frontend/dashboard_example.png, id=743, 1444.64719pt x 653.44125pt>
+File: img/side-frontend/dashboard_example.png Graphic file (type png)
+<use img/side-frontend/dashboard_example.png>
+Package pdftex.def Info: img/side-frontend/dashboard_example.png  used on input line 885.
+(pdftex.def)             Requested size: 364.19667pt x 164.72589pt.
+<img/side-frontend/devices_example.png, id=744, 1444.64719pt x 654.19406pt>
+File: img/side-frontend/devices_example.png Graphic file (type png)
+<use img/side-frontend/devices_example.png>
+Package pdftex.def Info: img/side-frontend/devices_example.png  used on input line 903.
+(pdftex.def)             Requested size: 364.19667pt x 164.91566pt.
+
+
+[32 <./img/side-frontend/dashboard_example.png>]
+<img/side-frontend/devices_alarms_zscore.png, id=751, 1442.38875pt x 727.21687pt>
+File: img/side-frontend/devices_alarms_zscore.png Graphic file (type png)
+<use img/side-frontend/devices_alarms_zscore.png>
+Package pdftex.def Info: img/side-frontend/devices_alarms_zscore.png  used on input line 920.
+(pdftex.def)             Requested size: 364.19667pt x 183.61249pt.
+
+
+[33 <./img/side-frontend/devices_example.png> <./img/side-frontend/devices_alarms_zscore.png>]
+<img/side-frontend/dashboard_neo4j.png, id=760, 1444.64719pt x 725.71124pt>
+File: img/side-frontend/dashboard_neo4j.png Graphic file (type png)
+<use img/side-frontend/dashboard_neo4j.png>
+Package pdftex.def Info: img/side-frontend/dashboard_neo4j.png  used on input line 944.
+(pdftex.def)             Requested size: 364.19667pt x 182.94443pt.
+
+Overfull \hbox (29.30711pt too wide) in paragraph at lines 970--971
+\T1/cmr/m/n/12 I pac-chet-ti di re-te cat-tu-ra-ti in con-te-sti SCA-DA/ICS so-no or-ga-niz-za-ti nel-la car-tel-la \T1/cmtt/m/n/12 data-modbus\T1/cmr/m/n/12 .
+ []
+
+
+
+[34 <./img/side-frontend/dashboard_neo4j.png>]
+Overfull \hbox (25.51898pt too wide) in paragraph at lines 994--995
+[]\T1/cmr/bx/n/12 Preprocessing: \T1/cmr/m/n/12 le fea-tu-re nu-me-ri-che ven-go-no stan-dar-diz-za-te me-dian-te \T1/cmtt/m/n/12 StandardScaler
+ []
+
+
+
+[35]
+
+[36]
+Overfull \hbox (25.2454pt too wide) in paragraph at lines 1033--1035
+[]\T1/cmr/m/n/12 Il ser-ver espo-ne in-for-ma-zio-ni iden-ti-fi-ca-ti-ve stan-dard tra-mi-te \T1/cmtt/m/n/12 ModbusDeviceIdentification
+ []
+
+
+
+[37]
+Overfull \hbox (4.8185pt too wide) in paragraph at lines 1098--1099
 [] []\T1/cmr/bx/n/12 Me-to-di ser-ver[] \T1/cmr/m/n/12 Me-to-di espo-sti tra-mi-te de-co-ra-to-re \T1/cmtt/m/n/12 @uamethod\T1/cmr/m/n/12 , ad esem-pio \T1/cmtt/m/n/12 ServerMethod
  []
 
-) (section/4_SCADA_Attack.tex
 
-[31]
+
+[38]) (section/4_SCADA_Attack.tex
+
+[39]
 Capitolo 4.
 
 
-[32
+[40
 
 ]
 
-[33]) (section/5_Conclusion.tex
+[41]) (section/5_Conclusion.tex
 
-[34]
+[42]
 Capitolo 5.
 )
 
-[35
+[43
 
 ]
 
-[36
+[44
 
 ]
 
-[37]
+[45]
 
-[38] (main.aux)
+[46] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -1233,23 +1256,23 @@ L3 programming layer <2025-09-02>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1C573B013CBB67DD5911F25235A7EBCC;10013.
+(rerunfilecheck)             Checksum: 11EE8F0AA8FF5F34E557D4C4941A6580;10326.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37251 strings out of 468081
- 721295 string characters out of 5435855
- 1617112 words of memory out of 5000000
- 65172 multiletter control sequences out of 15000+600000
+ 37698 strings out of 468081
+ 727579 string characters out of 5435855
+ 1825374 words of memory out of 5000000
+ 65431 multiletter control sequences out of 15000+600000
  646596 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,87p,1605b,2303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,87p,1605b,2310s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1440.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\umber\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (40 pages, 1713022 bytes).
+Output written on main.pdf (48 pages, 2309339 bytes).
 PDF statistics:
- 1445 PDF objects out of 1728 (max. 8388607)
- 199 named destinations out of 1000 (max. 500000)
- 500 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1725 PDF objects out of 1728 (max. 8388607)
+ 387 named destinations out of 1000 (max. 500000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
 

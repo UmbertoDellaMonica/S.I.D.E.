@@ -424,6 +424,61 @@
       \endverb
       \keyw{Protocols;Integrated circuits;Encapsulation;Intrusion detection;Tools;Computer security;SCADA;Industrial Control;Cyber Security;Intrusion Detection Systems;IDS;Suricata;EtherNet/IP Protocol}
     \endentry
+    \entry{DatasetModbus}{misc}{}{}
+      \name{author}{5}{}{%
+        {{hash=46ee4d8b628b0212566036b036f5376e}{%
+           family={Frazão},
+           familyi={F\bibinitperiod},
+           given={Ivo},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f8e5e0c42f6bfb9e1dddead0a897cbbe}{%
+           family={Abreu},
+           familyi={A\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=56f448a56094e93db7141b81932da302}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Tiago},
+           giveni={T\bibinitperiod}}}%
+        {{hash=72b70939cbda39b02cb7275b231343c8}{%
+           family={Araújo},
+           familyi={A\bibinitperiod},
+           given={Helder},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5fb0a892e1cf1f9eba78135f9c904bfd}{%
+           family={Simões},
+           familyi={S\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Dataport}%
+      }
+      \strng{namehash}{f792f5e96eddf2e727fbce5cff784cd1}
+      \strng{fullhash}{7f22dee130b8869b96a3eb425ac7e317}
+      \strng{fullhashraw}{7f22dee130b8869b96a3eb425ac7e317}
+      \strng{bibnamehash}{f792f5e96eddf2e727fbce5cff784cd1}
+      \strng{authorbibnamehash}{f792f5e96eddf2e727fbce5cff784cd1}
+      \strng{authornamehash}{f792f5e96eddf2e727fbce5cff784cd1}
+      \strng{authorfullhash}{7f22dee130b8869b96a3eb425ac7e317}
+      \strng{authorfullhashraw}{7f22dee130b8869b96a3eb425ac7e317}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cyber-security Modbus ICS dataset}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.21227/pjff-1a03
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.doi.org/10.21227/pjff-1a03
+      \endverb
+      \verb{url}
+      \verb https://dx.doi.org/10.21227/pjff-1a03
+      \endverb
+    \endentry
     \entry{alasiri202034}{article}{}{}
       \name{author}{2}{}{%
         {{hash=a481cce1cda2ae3b4ae127de76f5be8d}{%
@@ -658,6 +713,46 @@
       \verb 10.1109/JAS.2021.1004344
       \endverb
       \keyw{Performance evaluation;Cloud computing;Intrusion detection;Machine learning;Agriculture;Smart grids;Internet of Things;Agriculture 4.0;cyber security;intrusion detection system;machine learning approaches;smart agriculture}
+    \endentry
+    \entry{scadaAttacks}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e49118400920f509ce7b4c4a73ae6001}{%
+           family={Alanazi},
+           familyi={A\bibinitperiod},
+           given={Manar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=eaed98f3bd4ceca21eeb5ace717505ed}{%
+           family={Mahmood},
+           familyi={M\bibinitperiod},
+           given={Abdun},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0d57f9403da23507edaafc11bdadadc4}{%
+           family={Chowdhury},
+           familyi={C\bibinitperiod},
+           given={Mohammad\bibnamedelimb Jabed\bibnamedelima Morshed},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{fullhash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{fullhashraw}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{bibnamehash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{authorbibnamehash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{authornamehash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{authorfullhash}{364c2c9308e5c256d6229217d8e00fff}
+      \strng{authorfullhashraw}{364c2c9308e5c256d6229217d8e00fff}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers and Security}
+      \field{title}{SCADA vulnerabilities and attacks: A review of the state-of-the-art and open issues}
+      \field{volume}{125}
+      \field{year}{2023}
+      \field{pages}{103028}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cose.2022.103028
+      \endverb
     \endentry
     \entry{plcCybersecuirtyRisk}{inproceedings}{}{}
       \name{author}{4}{}{%
