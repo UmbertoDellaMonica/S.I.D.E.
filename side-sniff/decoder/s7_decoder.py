@@ -3,7 +3,7 @@ from scapy.all import TCP, IP, Raw
 from configuration.side_sniffer_configuration import S7_PORT
 
 
-# --- Dizionari di supporto ---
+# --- Dizionari di supporto S7 ---
 S7_JOB_FUNCTIONS = {
     0x01: "CPU Function",
     0x02: "Unknown/Handshake",
