@@ -1,12 +1,17 @@
 # 🛡️ S.I.D.E. – SCADA Intrusion Detection Environment
 
-**S.I.D.E.** (SCADA Intrusion Detection Environment) is a **next-generation Intrusion Detection System (IDS)** designed for industrial control networks (ICS/SCADA).  
+**S.I.D.E.** (SCADA Intrusion Detection Environment) is a **next-generation Intrusion Detection System (IDS)** designed for industrial control networks (ICS/SCADA).
 
-It **monitors SCADA devices**, **detects network anomalies**, and provides **real-time alerts**, ensuring your industrial network remains **secure, resilient, and operational**.  
+It **monitors SCADA devices**, **detects network anomalies**, and provides **real-time alerts**, ensuring your industrial network remains **secure, resilient, and operational**.
 
-> **Visual Diagram:** The complete architecture of S.I.D.E. is also available in **Excalidraw format** and in **PNG format** for an interactive, detailed overview.
+> **Visual Diagram:**
+> The complete architecture of S.I.D.E. is available in both **Excalidraw (.excalidraw)** and **PNG** formats for an interactive, detailed overview.
+>
+> The `.excalidraw` file can be opened directly in **Visual Studio Code** using the [**Excalidraw Editor extension**](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor).
 
 ---
+
+
 
 ## 🗂️ Repository Structure
 
