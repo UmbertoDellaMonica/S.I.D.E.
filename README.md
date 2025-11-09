@@ -4,6 +4,8 @@
 
 It **monitors SCADA devices**, **detects network anomalies**, and provides **real-time alerts**, ensuring your industrial network remains **secure, resilient, and operational**.  
 
+> **Visual Diagram:** The complete architecture of S.I.D.E. is also available in **Excalidraw format** and in **PNG format** for an interactive, detailed overview.
+
 ---
 
 ## 🗂️ Repository Structure

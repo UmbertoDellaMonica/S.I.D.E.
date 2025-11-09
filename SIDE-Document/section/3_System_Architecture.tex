@@ -13,6 +13,16 @@ L’architettura complessiva si articola nei seguenti componenti principali:
     \item \textbf{Device Simulators}: insieme di dispositivi SCADA simulati (Modbus, OPC-UA, Snap7).
 \end{itemize}
 
+
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/side-env.png}
+    \caption{Struttura concettuale dell'Architettura SCADA}
+    \label{fig:side_architecture}
+  \end{figure}
+
+
+
 %%% Side-Sniff
 \section{side-sniff}
 Il modulo \texttt{side-sniff} rappresenta il core del sistema: un \textit{IDS} modulare e cross-platform per la cattura, l'analisi e la classificazione del traffico SCADA/ICS.  
@@ -26,7 +36,7 @@ Il design è pensato per essere leggero in fase di cattura ma estendibile nelle 
   \item Pubblicazione dei vari messaggi di alert mediante protocollo MQTT per tipologia di Protocollo gestito.
 \end{itemize}
 
-\subsection{Panoramica dello Sniffer}
+\subsection{Panoramica dell' IDS}
 Il servizio opera come \textit{daemon/service} e si compone di tre blocchi principali:
 \begin{enumerate}
   \item \textbf{Capture layer}: gestisce la cattura del traffico di rete attraverso librerie compatibili con \texttt{libpcap} / \texttt{Npcap}, utilizzate internamente da \texttt{Scapy}. È responsabile dell’acquisizione dei pacchetti e dell’applicazione di eventuali filtri BPF per limitare il traffico analizzato.
@@ -178,13 +188,41 @@ La funzione \texttt{parse\_modbus\_payload()} effettua l’unpacking del payload
 I codici funzione e le eccezioni sono mappati in dizionari interni per fornire una decodifica semantica leggibile, utile al motore di analisi statistico e ML.  
 Un estratto del decoder è mostrato di seguito:
 
-\begin{lstlisting}[language=Python, caption={Dichiarazione del channel exchange RabbitMQ in Python}, label={lst:exchange_1}]
-exchange_name = "frontend.events"
-channel.exchange_declare(exchange=exchange_name, exchange_type="fanout")
-transaction_id, protocol_id, length = struct.unpack(">HHH", payload[:6])
-unit_id = payload[6]
-function_code = payload[7]
-data = payload[8:]
+\begin{lstlisting}[language=Python, caption={Funzione Parsing Modbus Payload}, label={lst:parisng_modbus_function}]
+def parse_modbus_payload(payload: bytes) -> dict | None:
+    """
+    Parsing di un singolo pacchetto Modbus TCP (senza multi-frame)
+    """
+    if len(payload) < 8:
+        return None  % Payload troppo corto
+
+    % MBAP Header: Transaction ID, Protocol ID, Length
+    transaction_id, protocol_id, length = struct.unpack(">HHH", payload[:6])
+    unit_id = payload[6]
+    function_code = payload[7]
+    data = payload[8:] if len(payload) > 8 else b""
+
+    parsed = {
+        "transaction_id": transaction_id,
+        "protocol_id": protocol_id,
+        "length": length,
+        "unit_id": unit_id,
+        "function_code": function_code,
+        "data": data,
+    }
+
+    % Gestione eccezioni Modbus
+    if function_code >= 0x80:
+        parsed["exception"] = True
+        parsed["exception_code"] = data[0] if data else None
+        parsed["exception_message"] = MODBUS_EXCEPTIONS.get(
+            parsed["exception_code"], "Unknown Exception"
+        )
+    else:
+        parsed["exception"] = False
+        parsed["function_name"] = MODBUS_FUNCTIONS.get(function_code, "Unknown")
+
+    return parsed
 \end{lstlisting}
 
 
@@ -201,6 +239,107 @@ La funzione \texttt{parse\_s7\_payload()} effettua:
 Ogni pacchetto viene arricchito con metadati semantici (funzione logica, area di memoria, riferimento DB, ecc.) per consentire un’analisi ad alto livello delle operazioni PLC.  
 I dizionari \texttt{S7\_JOB\_FUNCTIONS}, \texttt{S7\_MEMORY\_AREAS} e \texttt{S7\_ROSCTR} consentono di tradurre i codici numerici in descrizioni leggibili.
 
+
+
+
+\begin{lstlisting}[language=Python, caption={Funzione Parsing S7 Payload}, label={lst:parisng_s7_function}]
+def parse_s7_payload(payload: bytes) -> dict | None:
+    """Parsing avanzato di pacchetto S7 TCP"""
+    if len(payload) < 10:
+        return None
+
+    try:
+        % --- TPKT Header ---
+        version, reserved, total_length = struct.unpack(">BBH", payload[:4])
+
+        % --- COTP Header ---
+        cotp_length = payload[4]
+        cotp_pdu_type = payload[5]
+
+        % --- S7 PDU Header ---
+        s7_start = 4 + cotp_length
+        if len(payload) < s7_start + 8:
+            return None
+
+        pdu_type, rosctr, reserved1, pdu_ref, param_len, data_len = struct.unpack(
+            ">BBHBBH", payload[s7_start : s7_start + 8]
+        )
+
+        % Parametri e dati
+        param_data = payload[s7_start + 8 : s7_start + 8 + param_len]
+        actual_data = payload[
+            s7_start
+            + 8
+            + param_len : s7_start
+            + 8
+            + param_len
+            + min(data_len, len(payload) - (s7_start + 8 + param_len))
+        ]
+
+        parsed = {
+            "tpkt_version": version,
+            "tpkt_length": total_length,
+            "cotp_pdu_type": cotp_pdu_type,
+            "pdu_type": pdu_type,
+            "rosctr": rosctr,
+            "rosctr_name": S7_ROSCTR.get(rosctr, "Unknown"),
+            "pdu_reference": pdu_ref,
+            "parameter_length": param_len,
+            "data_length": data_len,
+            "parameters": param_data,
+            "data": actual_data,
+            "job_function": None,
+            "job_function_name": None,
+            "items": [],
+        }
+
+        % Analisi Job Function
+        if param_data:
+            function_code = param_data[0]
+            parsed["job_function"] = function_code
+            parsed["job_function_name"] = S7_JOB_FUNCTIONS.get(
+                function_code, f"Unknown (0x{function_code:02X})"
+            )
+
+        % Parsing Read/Write Items
+        items = []
+        if param_data and len(param_data) > 1 and param_data[0] in (0x04, 0x05, 0x2E):
+            item_count = param_data[1]
+            idx = 2
+            for _ in range(item_count):
+                if len(param_data) < idx + 4:
+                    break
+                area_code = param_data[idx + 1]
+                db_number = None
+                start = None
+                length = None
+                % Area DB
+                if area_code == 0x84 and len(param_data) >= idx + 8:
+                    db_number = struct.unpack(">H", param_data[idx + 2 : idx + 4])[0]
+                    start = struct.unpack(">H", param_data[idx + 4 : idx + 6])[0]
+                    length = struct.unpack(">H", param_data[idx + 6 : idx + 8])[0]
+                items.append(
+                    {
+                        "area": area_code,
+                        "area_name": S7_MEMORY_AREAS.get(area_code, "Unknown"),
+                        "db_number": db_number,
+                        "start": start,
+                        "length": length,
+                    }
+                )
+                % avanzamento indice (semplificato)
+                idx += 8 if area_code == 0x84 else 4
+        parsed["items"] = items
+
+        return parsed
+    except Exception as e:
+        print("Errore parsing S7:", e)
+        return None
+\end{lstlisting}
+
+
+
+
 \paragraph{Parsing OPC-UA}
 Il decoder OPC-UA gestisce la versione binaria del protocollo su TCP (porta 4840).  
 La funzione \texttt{parse\_opcua\_payload()} analizza la sequenza dei campi:
@@ -213,6 +352,62 @@ La funzione \texttt{parse\_opcua\_payload()} analizza la sequenza dei campi:
 
 I campi principali vengono convertiti in dizionari serializzabili per il successivo invio al motore di rilevamento.  
 Questo approccio consente di effettuare un’analisi comportamentale anche sui messaggi OPC-UA, valutando pattern di frequenza, sequenza e dimensione dei pacchetti.
+
+
+
+\begin{lstlisting}[language=Python, caption={Funzione Parsing OPC-UA Payload}, label={lst:parisng_opcua_function}]
+
+def parse_opcua_payload(payload: bytes) -> dict | None:
+    """
+    Parsing minimale OPC UA TCP Binary
+    - TPKT Header: 4 bytes
+    - UA Header: MessageType (3 char) + ChunkType (1 char)
+    - Restituisce anche il payload in formato esadecimale JSON-serializzabile
+    """
+    if len(payload) < 8:  % TPKT + UA header minimo
+        return None
+
+    % TPKT header: versione, reserved, length (big endian)
+    version = payload[0]
+    length = int.from_bytes(payload[2:4], byteorder="big")
+
+    % UA Binary message header
+    message_type = payload[4:7].decode(
+        "ascii", errors="replace"
+    )  % e.g., 'MSG', 'OPN', 'CLO'
+    chunk_type = payload[7:8].decode(
+        "ascii", errors="replace"
+    )  % 'F'=Final, 'A'=Intermediate
+
+    % Campi opzionali: SecureChannelId, SequenceNumber, RequestId
+    secure_channel_id = (
+        int.from_bytes(payload[8:12], "little") if len(payload) >= 12 else None
+    )
+    sequence_number = (
+        int.from_bytes(payload[12:16], "little") if len(payload) >= 16 else None
+    )
+    request_id = (
+        int.from_bytes(payload[16:20], "little") if len(payload) >= 20 else None
+    )
+
+    % Payload dati veri e propri
+    raw_data = payload[20:] if len(payload) > 20 else b""
+
+    % Conversione in stringa esadecimale JSON-serializzabile
+    payload_data_serializable = raw_data.hex() if raw_data else None
+
+    return {
+        "message_type": message_type,
+        "chunk_type": chunk_type,
+        "secure_channel_id": secure_channel_id,
+        "sequence_number": sequence_number,
+        "request_id": request_id,
+        "payload_data": payload_data_serializable,
+    }
+\end{lstlisting}
+
+
+
 
 \paragraph{Architettura comune dei decoder}
 Tutti i decoder condividono una struttura coerente:
@@ -231,7 +426,7 @@ Questa uniformità semantica tra gli \textit{handler} permette al sistema \textt
 Il modulo \texttt{ZScoreService} rappresenta il componente statistico centrale del sistema, impiegato da ciascun \textit{Protocol Handler} per la valutazione dinamica delle anomalie nei flussi di pacchetti SCADA.  
 La logica implementata si basa sull'analisi delle deviazioni standard (metrica Z-score) rispetto a valori di riferimento (\textit{baseline}) specifici per ogni coppia \texttt{device-protocol}.  
 
-\subsubsection*{Architettura e Funzionamento}
+\subsubsection{Architettura e Funzionamento}
 \texttt{ZScoreService} è strutturato come una \textit{singleton class} thread-safe, garantendo l’accesso concorrente da parte di più thread di parsing provenienti dai vari \textit{handler}.  
 All’avvio, il modulo inizializza un insieme di baseline statistiche di default, definendo per ciascuna metrica di interesse — come \texttt{function\_code} e \texttt{data\_length} — una media (\(\mu\)) e una deviazione standard (\(\sigma\)) di riferimento.
 
@@ -249,11 +444,11 @@ Z = \frac{x - \mu}{\sigma}
 dove \(x\) rappresenta il valore osservato nel pacchetto corrente.  
 Se il valore assoluto \(|Z|\) eccede la soglia configurata (\texttt{threshold}, di default 3), l’evento viene classificato come anomalo e accumulato in una coda temporale associata al dispositivo e protocollo di origine.
 
-\subsubsection*{Meccanismo di Aggregazione Temporale}
+\subsubsection{Meccanismo di Aggregazione Temporale}
 Per evitare falsi positivi dovuti a fluttuazioni isolate, il modulo impiega un meccanismo di aggregazione basato su una \texttt{deque} temporale (\textit{sliding window}) di dimensione configurabile (\texttt{aggregation\_window}).  
 Solo quando il numero minimo di anomalie (\texttt{min\_anomalies}) viene superato all’interno della finestra temporale, viene generato un evento di allarme consolidato, notificato al sistema superiore di alerting.
 
-\subsubsection*{Aggiornamento Dinamico delle Baseline}
+\subsubsection{Aggiornamento Dinamico delle Baseline}
 Il modulo supporta un aggiornamento adattivo delle baseline, attivabile tramite il flag \texttt{update\_dynamic=True}.  
 In tale modalità, le statistiche vengono aggiornate in tempo reale secondo due strategie:
 \begin{enumerate}
@@ -264,7 +459,7 @@ In tale modalità, le statistiche vengono aggiornate in tempo reale secondo due 
   \item \textbf{Aggiornamento Lineare Medio}: in alternativa, viene calcolata una media aritmetica progressiva dei valori recenti per una stabilizzazione graduale.
 \end{enumerate}
 
-\subsubsection*{Gestione della Concorrenza e Persistenza}
+\subsubsection{Gestione della Concorrenza e Persistenza}
 L’intero accesso ai dati condivisi (statistiche, soglie, anomalie) è protetto da un \texttt{Lock} per garantire la coerenza in ambienti multithread, specialmente quando più \textit{handler} aggiornano simultaneamente le stesse strutture dati.  
 Le baseline e le soglie possono inoltre essere personalizzate per singolo dispositivo o protocollo attraverso i metodi:
 \begin{itemize}
@@ -272,7 +467,7 @@ Le baseline e le soglie possono inoltre essere personalizzate per singolo dispos
   \item \texttt{set\_threshold(device\_id, protocol, threshold)}
 \end{itemize}
 
-\subsubsection*{Integrazione con i Protocol Handler}
+\subsubsection{Integrazione con i Protocol Handler}
 Ciascun \textit{handler} invoca \texttt{ZScoreService.get\_instance().check()} durante la fase di analisi di ogni pacchetto decodificato.  
 Se la funzione restituisce un’anomalia aggregata, il messaggio generato viene inviato al modulo di \textit{alert management}, che può inoltrarlo via MQTT o loggarlo nel sistema SIEM.  
 Questo approccio permette un’analisi statistica coerente e centralizzata, indipendentemente dal tipo di protocollo in uso.
@@ -284,8 +479,86 @@ Il flusso di funzionamento può essere riassunto come segue:
   \item Le feature vengono inviate al modulo \texttt{ZScoreService};
   \item Viene calcolato lo Z-score per ogni metrica;
   \item Le anomalie vengono accumulate e analizzate in una finestra temporale;
-  \item Al superamento della soglia di aggregazione viene generato un evento di allarme.
+  \item Al superamento della soglia di aggregazione viene generato un evento di allarme di warning.
 \end{enumerate}
+
+
+
+\subsection{Modulo di Anomaly Detection: ML - Isolation Forest}
+\label{subsec:ml-isoforest}
+
+Il modulo \texttt{IsolationForestService} rappresenta il componente di rilevazione anomalie basato su apprendimento automatico del sistema \texttt{S.I.D.E.}, complementare al servizio statistico \texttt{ZScoreService}.
+La sua funzione è quella di individuare pattern di traffico anomali attraverso un modello di \textit{Machine Learning} addestrato su flussi di pacchetti SCADA etichettati come “attacco” e “clean”, sfruttando la capacità dell’algoritmo \texttt{Isolation Forest} di isolare istanze rare o inconsuete nello spazio delle feature.
+
+\subsubsection{Architettura del Modulo e Dataset di Addestramento}
+Il processo di training del modello \texttt{IsolationForest} avviene in una fase offline, utilizzando un insieme di dataset CSV derivati da catture di traffico SCADA in due condizioni:
+\begin{itemize}
+\item \textbf{Dataset Clean:} rappresenta il comportamento legittimo dei dispositivi industriali;
+\item \textbf{Dataset Attack:} contiene diverse tipologie di attacchi (es. \textit{Replay}, \textit{Function Code Injection}, \textit{Flooding}).
+\end{itemize}
+
+Durante il training, il sistema concatena i file CSV d’attacco, ne utilizza il 70% per l’addestramento e il restante per la validazione.
+Le feature di interesse, selezionate in funzione del protocollo (es. Modbus/TCP), comprendono:
+
+
+\begin{lstlisting}[language=python, caption={Selezione delle Feature per ML-IsolationForestModbusService}]
+features = ["pkt_size","ip_ttl","ip_len","ip_proto_num","src_port","dst_port","modbus_function_code","modbus_data_length"]
+\end{lstlisting}
+
+
+Tali feature vengono pulite, normalizzate con uno \texttt{StandardScaler} e successivamente utilizzate per addestrare il modello di isolamento.
+Al termine, vengono generati e salvati su disco i seguenti artefatti:
+\begin{itemize}
+    \item \texttt{isoforest\_modbus\_model.joblib}: modello addestrato;
+    \item \texttt{isoforest\_modbus\_scaler.joblib}: scaler associato per la normalizzazione dei dati;
+    \item \texttt{isoforest\_modbus\_threshold.txt}: soglia di decisione derivata dal training.
+\end{itemize}
+
+
+\subsubsection{Meccanismo di Rilevazione}
+Durante l’analisi online, ciascun \textit{Protocol Handler} (es. ModbusHandler) richiama il servizio \texttt{IsolationForestModbusService} tramite il metodo:
+
+
+\begin{lstlisting}[language=python, caption={Utilizzo e integrazione del Modello di Machine Learning all'interno dell'Handler}]
+IsolationForestModbusService.get_instance().check(parsed_packet, raw_packet)
+\end{lstlisting}
+
+
+Il modulo opera come una \textit{singleton class}, che carica all’avvio il modello, lo scaler e la soglia associati al protocollo in uso.
+Per ogni pacchetto, viene invocato un \textit{feature extractor} che ricostruisce il vettore di input del modello a partire da:
+\begin{itemize}
+\item campi IP e TCP (\texttt{ttl}, \texttt{len}, \texttt{proto}, \texttt{sport}, \texttt{dport});
+\item informazioni Modbus decodificate (\texttt{function\_code}, \texttt{data\_length});
+\item dimensione complessiva del pacchetto.
+\end{itemize}
+
+Le feature vengono trasformate tramite lo \texttt{StandardScaler} e passate al modello per ottenere il punteggio di decisione (\texttt{decision\_function}).
+Se il punteggio risulta inferiore alla soglia salvata (\texttt{threshold}), il pacchetto viene marcato come anomalo.
+
+\subsubsection{Threshold e Valutazione}
+La soglia di rilevamento è definita dinamicamente in fase di training come percentile dei punteggi di decisione osservati sui dati d’attacco, solitamente il 65° percentile.
+Questo consente un bilanciamento ottimale tra sensibilità e robustezza ai falsi positivi.
+Durante la validazione sul dataset “clean”, viene calcolata la percentuale di campioni erroneamente classificati come anomalie, utile per calibrare il valore di soglia finale.
+
+\subsubsection{Integrazione con il Sistema di Monitoraggio}
+Nel flusso operativo in tempo reale:
+\begin{enumerate}
+\item Il pacchetto viene decodificato dal \textit{Protocol Handler};
+\item Le feature vengono estratte e scalate;
+\item Il modello ML produce un punteggio e una classificazione binaria (\textit{normal/anomaly});
+\item Se viene rilevata un’anomalia, l’evento è notificato al modulo di \textit{alert management}, in modo analogo al servizio Z-Score.
+\end{enumerate}
+
+\subsubsection{Vantaggi e Considerazioni}
+L’approccio \texttt{Isolation Forest} consente di rilevare comportamenti anomali anche in assenza di regole esplicite o soglie statiche, risultando particolarmente efficace per:
+\begin{itemize}
+\item pattern complessi o non lineari nei flussi SCADA;
+\item deviazioni graduali dovute a compromissioni lente;
+\item reti multi-protocollo con dinamiche diverse tra dispositivi.
+\end{itemize}
+
+Rispetto al modulo \texttt{ZScoreService}, la componente ML fornisce un’analisi più profonda del contesto, ma richiede una fase di addestramento supervisionato e un’accurata selezione delle feature per ciascun protocollo industriale.
+
 
 
 \end{enumerate}
